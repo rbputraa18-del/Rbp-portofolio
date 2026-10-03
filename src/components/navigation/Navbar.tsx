@@ -10,14 +10,19 @@ interface NavLink {
   label: string
 }
 
+interface NavbarProps {
+  /** Controlled from App so the page behind the open menu can be made inert. */
+  menuOpen: boolean
+  onMenuOpenChange: (open: boolean) => void
+}
+
 /**
  * Sticky, minimal site navigation (DESIGN_SYSTEM.md — Navigation).
  * Nav targets (#work/#about/#contact) are in-page anchors; the sections
  * themselves arrive in Phases 3–4.
  */
-export function Navbar() {
+export function Navbar({ menuOpen, onMenuOpenChange }: NavbarProps) {
   const t = useDictionary()
-  const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
   const toggleRef = useRef<HTMLButtonElement>(null)
@@ -36,6 +41,9 @@ export function Navbar() {
   }, [])
 
   // Close the mobile menu on outside pointer, Escape, or desktop resize.
+  // While open, keep keyboard focus cycling inside the header (focus trap):
+  // the page behind the menu is inert, so the header is the whole
+  // interactive region.
   useEffect(() => {
     if (!menuOpen) return
     const onPointerDown = (event: PointerEvent) => {
@@ -44,13 +52,32 @@ export function Navbar() {
         event.target instanceof Node &&
         !headerRef.current.contains(event.target)
       ) {
-        setMenuOpen(false)
+        onMenuOpenChange(false)
       }
     }
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setMenuOpen(false)
+        onMenuOpenChange(false)
         toggleRef.current?.focus()
+        return
+      }
+      if (event.key !== 'Tab' || !headerRef.current) return
+      const focusables = Array.from(
+        headerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled])',
+        ),
+      )
+      if (focusables.length === 0) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      const active = document.activeElement
+      const outside = !headerRef.current.contains(active)
+      if (event.shiftKey && (active === first || outside)) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && (active === last || outside)) {
+        event.preventDefault()
+        first.focus()
       }
     }
     document.addEventListener('pointerdown', onPointerDown)
@@ -59,13 +86,13 @@ export function Navbar() {
       document.removeEventListener('pointerdown', onPointerDown)
       document.removeEventListener('keydown', onKeyDown)
     }
-  }, [menuOpen])
+  }, [menuOpen, onMenuOpenChange])
 
   useEffect(() => {
     if (!menuOpen) return
     const mq = window.matchMedia(`(min-width: ${BREAKPOINTS.md}px)`)
     const onChange = () => {
-      if (mq.matches) setMenuOpen(false)
+      if (mq.matches) onMenuOpenChange(false)
     }
     mq.addEventListener('change', onChange)
     return () => mq.removeEventListener('change', onChange)
@@ -93,7 +120,7 @@ export function Navbar() {
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? t.a11y.closeMenu : t.a11y.openMenu}
-            onClick={() => setMenuOpen((open) => !open)}
+            onClick={() => onMenuOpenChange(!menuOpen)}
           >
             <span className="menu-toggle-icon" aria-hidden="true">
               <span />
@@ -103,7 +130,7 @@ export function Navbar() {
           </button>
         </div>
       </div>
-      {menuOpen && <MobileMenu links={links} onNavigate={() => setMenuOpen(false)} />}
+      {menuOpen && <MobileMenu links={links} onNavigate={() => onMenuOpenChange(false)} />}
     </header>
   )
 }
