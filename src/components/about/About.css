@@ -1,0 +1,19 @@
+.about {
+  padding-block: var(--section-space);
+  /* Keep anchored scroll below the sticky navbar (#about). */
+  scroll-margin-top: calc(4rem + var(--space-4));
+}
+
+.about-inner {
+  max-width: var(--content-narrow);
+}
+
+.about-lead {
+  margin: 0;
+  font-size: var(--text-xl);
+  line-height: 1.5;
+}
+
+.about-supporting {
+  margin: var(--space-6) 0 0;
+}

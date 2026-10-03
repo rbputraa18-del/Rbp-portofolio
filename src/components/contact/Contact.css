@@ -1,0 +1,61 @@
+.contact {
+  padding-block: var(--section-space);
+  /* Keep anchored scroll below the sticky navbar (#contact). */
+  scroll-margin-top: calc(4rem + var(--space-4));
+}
+
+.contact-inner {
+  max-width: var(--content-narrow);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
+}
+
+.contact-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.contact-link-primary {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+}
+
+.contact-link-primary:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: var(--color-bg);
+}
+
+.contact-link-arrow {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.contact-link:hover .contact-link-arrow {
+  transform: translateX(3px);
+}

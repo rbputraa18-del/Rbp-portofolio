@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/navigation/Navbar'
 import { useDictionary } from './lib/language'
 import { Home } from './pages/Home'
@@ -18,6 +19,7 @@ export function App() {
           screen-reader access cannot reach the page behind the menu (a11y). */}
       <div inert={menuOpen}>
         <Home />
+        <Footer />
       </div>
     </div>
   )

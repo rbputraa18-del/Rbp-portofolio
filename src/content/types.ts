@@ -22,7 +22,14 @@ export interface ProjectCopy {
  */
 export interface Dictionary {
   meta: { siteName: string; siteTitle: string }
-  a11y: { skipLink: string; openMenu: string; closeMenu: string; primaryNav: string; language: string }
+  a11y: {
+    skipLink: string
+    openMenu: string
+    closeMenu: string
+    primaryNav: string
+    language: string
+    footerNav: string
+  }
   nav: { work: string; about: string; contact: string }
   hero: {
     eyebrow: string
@@ -37,7 +44,17 @@ export interface Dictionary {
   howIBuild: { heading: string; steps: [string, string, string, string] }
   aiDevelopment: { heading: string; body: string }
   about: { heading: string; paragraphs: [string, string] }
-  contact: { heading: string; subheading: string }
+  currentlyBuilding: { heading: string; subheading: string }
+  contact: {
+    heading: string
+    subheading: string
+    /** Only channels confirmed by the owner — never invented (CONTENT.md). */
+    channels: {
+      email: { label: string; href: string }
+      whatsapp: { label: string; href: string }
+    }
+  }
+  footer: { copyright: string }
   status: Record<ProjectStatus, string>
   projects: Record<ProjectId, ProjectCopy>
 }

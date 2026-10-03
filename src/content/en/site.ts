@@ -16,6 +16,7 @@ export const en = {
     closeMenu: 'Close menu',
     primaryNav: 'Primary',
     language: 'Language',
+    footerNav: 'Footer',
   },
   nav: {
     work: 'WORK',
@@ -54,9 +55,26 @@ export const en = {
       'I like understanding how a process works, finding what makes it difficult, and building something that makes it easier.',
     ],
   },
+  currentlyBuilding: {
+    heading: 'CURRENTLY BUILDING',
+    subheading: "Projects I'm still shaping, improving, and developing.",
+  },
   contact: {
     heading: 'HAVE A PROBLEM WORTH SOLVING?',
     subheading: "Let's turn it into something useful.",
+    channels: {
+      email: {
+        label: 'rb.putraa18@gmail.com',
+        href: 'mailto:rb.putraa18@gmail.com',
+      },
+      whatsapp: {
+        label: 'Chat on WhatsApp',
+        href: 'https://wa.me/6281808167759',
+      },
+    },
+  },
+  footer: {
+    copyright: '© 2026 Rekha Bahama Putra',
   },
   status: {
     'in-development': 'In development',

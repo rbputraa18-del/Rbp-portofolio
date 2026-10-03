@@ -16,6 +16,7 @@ export const id = {
     closeMenu: 'Tutup menu',
     primaryNav: 'Utama',
     language: 'Bahasa',
+    footerNav: 'Navigasi footer',
   },
   nav: {
     work: 'KARYA',
@@ -54,9 +55,26 @@ export const id = {
       'Saya suka memahami cara kerja sebuah proses, menemukan apa yang membuatnya sulit, dan membangun sesuatu yang membuatnya lebih mudah.',
     ],
   },
+  currentlyBuilding: {
+    heading: 'SEDANG DIKERJAKAN',
+    subheading: 'Project yang masih saya kembangkan, perbaiki, dan sempurnakan.',
+  },
   contact: {
     heading: 'PUNYA MASALAH YANG LAYAK DIPECAHKAN?',
     subheading: 'Mari kita ubah menjadi sesuatu yang berguna.',
+    channels: {
+      email: {
+        label: 'rb.putraa18@gmail.com',
+        href: 'mailto:rb.putraa18@gmail.com',
+      },
+      whatsapp: {
+        label: 'Chat di WhatsApp',
+        href: 'https://wa.me/6281808167759',
+      },
+    },
+  },
+  footer: {
+    copyright: '© 2026 Rekha Bahama Putra',
   },
   status: {
     'in-development': 'Dalam pengembangan',
