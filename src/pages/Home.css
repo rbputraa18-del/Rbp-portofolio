@@ -1,0 +1,128 @@
+/*
+ * TEMPORARY — layout for the Phase 1 foundation verification page.
+ * This file is removed when the real homepage replaces Home.tsx (Phase 2+).
+ */
+
+.foundation-header {
+  padding-block: var(--space-16) var(--space-10);
+}
+
+.foundation-header h1 {
+  margin-block: var(--space-4) var(--space-6);
+}
+
+.foundation-header p {
+  margin-block: 0 var(--space-3);
+}
+
+.foundation-section {
+  padding-block: var(--space-10);
+  border-top: 1px solid var(--color-border);
+}
+
+.foundation-section h2 {
+  margin-bottom: var(--space-6);
+}
+
+.foundation-section h3 {
+  margin-block: var(--space-6) var(--space-3);
+}
+
+.foundation-section h4 {
+  margin-block: 0 var(--space-3);
+}
+
+.foundation-section p + p {
+  margin-top: var(--space-3);
+}
+
+.lang-controls {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.lang-button {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+}
+
+.lang-button[aria-pressed='true'] {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.swatch-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  list-style: none;
+}
+
+.swatch {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.swatch-chip {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.project-list {
+  list-style: none;
+  display: grid;
+  gap: var(--space-10);
+}
+
+.project-list h3 {
+  margin-block: 0 var(--space-2);
+  font-size: var(--text-2xl);
+}
+
+.project-list .type-eyebrow {
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.project-meta {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.project-detail {
+  margin-block: var(--space-2) 0;
+  font-size: var(--text-sm);
+}
+
+.project-detail strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.foundation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-top: var(--space-16);
+  padding-block: var(--space-12);
+  border-top: 1px solid var(--color-border);
+}

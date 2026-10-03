@@ -1,0 +1,65 @@
+/*
+ * Design tokens — Phase 1 foundation (DESIGN_SYSTEM.md).
+ * Values are initial; final tuning happens in Phase 6 (visual refinement).
+ */
+
+:root {
+  /* Color — deep charcoal, warm off-white, muted amber/gold */
+  --color-bg: #1a1917;
+  --color-surface: #22211e;
+  --color-text: #f2efe9;
+  --color-text-secondary: #a8a29a;
+  --color-accent: #d1a24f;
+  --color-border: #2f2d28;
+
+  /* Typography families — temporary system stacks until final fonts are selected */
+  --font-display: ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, monospace;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-display: clamp(2rem, 4vw + 0.75rem, 3.5rem);
+  --text-hero: clamp(2.75rem, 6vw + 1rem, 5rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --section-space: clamp(4rem, 10vw, 8rem);
+
+  /* Layout */
+  --container-max: 74rem;
+  --container-pad: clamp(1.25rem, 4vw, 2.5rem);
+  --content-narrow: 40rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Breakpoints (reference only — custom properties cannot be used inside media queries).
+     Keep in sync with src/lib/breakpoints.ts:
+     sm 640px · md 768px · lg 1024px · xl 1280px */
+}
