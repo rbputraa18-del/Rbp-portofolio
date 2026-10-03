@@ -1,0 +1,47 @@
+.how-i-build {
+  padding-block: var(--section-space);
+}
+
+.how-i-build-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.how-i-build-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.how-i-build-step-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+}
+
+.how-i-build-step-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .how-i-build-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .how-i-build-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

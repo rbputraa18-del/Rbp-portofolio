@@ -1,0 +1,7 @@
+.ai-development {
+  padding-block: var(--section-space);
+}
+
+.ai-development-inner {
+  max-width: var(--content-narrow);
+}

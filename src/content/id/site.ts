@@ -37,6 +37,7 @@ export const id = {
   selectedWork: {
     heading: 'KARYA PILIHAN',
     subheading: 'Hal-hal yang telah saya bangun selama ini.',
+    visualPending: 'Pratinjau visual menyusul',
   },
   howIBuild: {
     heading: 'DARI MASALAH MENJADI PRODUK.',

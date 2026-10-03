@@ -1,0 +1,7 @@
+.philosophy {
+  padding-block: var(--section-space);
+}
+
+.philosophy-inner {
+  max-width: var(--content-narrow);
+}

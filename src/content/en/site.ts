@@ -37,6 +37,7 @@ export const en = {
   selectedWork: {
     heading: 'SELECTED WORK',
     subheading: "Things I've built along the way.",
+    visualPending: 'Visual preview pending',
   },
   howIBuild: {
     heading: 'FROM PROBLEM TO PRODUCT.',

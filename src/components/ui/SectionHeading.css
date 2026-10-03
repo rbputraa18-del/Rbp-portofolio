@@ -1,0 +1,8 @@
+.section-heading {
+  margin-bottom: var(--space-12);
+}
+
+.section-heading-subheading {
+  margin: var(--space-4) 0 0;
+  max-width: 52ch;
+}

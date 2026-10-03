@@ -33,7 +33,7 @@ export interface Dictionary {
     cta: string
   }
   philosophy: { heading: string; body: string }
-  selectedWork: { heading: string; subheading: string }
+  selectedWork: { heading: string; subheading: string; visualPending: string }
   howIBuild: { heading: string; steps: [string, string, string, string] }
   aiDevelopment: { heading: string; body: string }
   about: { heading: string; paragraphs: [string, string] }

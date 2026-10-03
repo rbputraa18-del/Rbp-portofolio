@@ -1,0 +1,11 @@
+.selected-work {
+  padding-block: var(--section-space);
+  /* Keep anchored scroll below the sticky navbar (#work). */
+  scroll-margin-top: calc(4rem + var(--space-4));
+}
+
+.selected-work-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 8vw, 6rem);
+}

@@ -1,0 +1,132 @@
+/* Mobile-first: text block stacked above the visual slot. */
+
+.project-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+.project-preview-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.project-preview-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.project-preview-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+}
+
+.project-preview-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.project-preview.is-featured .project-preview-title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.project-preview-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.project-preview-type {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.project-preview-status {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.project-preview-description {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--color-text-secondary);
+}
+
+/* Visual slot — neutral frame until real screenshots are supplied. */
+.project-preview-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  padding: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.project-preview.is-featured .project-preview-visual {
+  aspect-ratio: 16 / 9;
+}
+
+.project-preview-visual-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* Desktop — editorial two-column rows with alternating alignment;
+   the featured RE17 row spans the full width with a wide visual. */
+@media (min-width: 1024px) {
+  .project-preview {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .project-preview.is-featured {
+    align-items: start;
+  }
+
+  .project-preview-text {
+    grid-column: 1 / 6;
+  }
+
+  .project-preview-visual {
+    grid-column: 7 / -1;
+  }
+
+  .project-preview.is-flipped .project-preview-text {
+    grid-column: 8 / -1;
+    grid-row: 1;
+  }
+
+  .project-preview.is-flipped .project-preview-visual {
+    grid-column: 1 / 7;
+    grid-row: 1;
+  }
+
+  .project-preview.is-featured .project-preview-text {
+    grid-column: 1 / -1;
+  }
+
+  .project-preview.is-featured .project-preview-visual {
+    grid-column: 1 / -1;
+    aspect-ratio: 2 / 1;
+  }
+}
