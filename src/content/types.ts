@@ -22,10 +22,12 @@ export interface ProjectCopy {
  */
 export interface Dictionary {
   meta: { siteName: string; siteTitle: string }
+  a11y: { skipLink: string; openMenu: string; closeMenu: string; primaryNav: string; language: string }
   nav: { work: string; about: string; contact: string }
   hero: {
     eyebrow: string
-    headline: string
+    headline: [string, string]
+    portraitAlt: string
     role: string
     supporting: string
     cta: string

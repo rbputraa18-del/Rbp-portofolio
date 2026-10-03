@@ -10,6 +10,13 @@ export const en = {
     siteName: 'REKHA',
     siteTitle: 'Rekha Bahama Putra — Portfolio',
   },
+  a11y: {
+    skipLink: 'Skip to content',
+    openMenu: 'Open menu',
+    closeMenu: 'Close menu',
+    primaryNav: 'Primary',
+    language: 'Language',
+  },
   nav: {
     work: 'WORK',
     about: 'ABOUT',
@@ -17,7 +24,8 @@ export const en = {
   },
   hero: {
     eyebrow: "HELLO, I'M REKHA",
-    headline: 'I BUILD DIGITAL PRODUCTS FROM REAL PROBLEMS.',
+    headline: ['I BUILD DIGITAL PRODUCTS', 'FROM REAL PROBLEMS.'],
+    portraitAlt: 'Portrait of Rekha Bahama Putra',
     role: 'Web Developer · Product Builder · AI-Assisted Development',
     supporting: 'Turning everyday problems into practical digital tools.',
     cta: 'Explore My Work',

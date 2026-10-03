@@ -139,6 +139,29 @@ img {
   border: 0;
 }
 
+/* Skip link — hidden until keyboard focus */
+.skip-link {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 200;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: translateY(-300%);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
 /* Respect reduced-motion preferences (DESIGN_SYSTEM.md — Motion) */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -10,6 +10,13 @@ export const id = {
     siteName: 'REKHA',
     siteTitle: 'Rekha Bahama Putra — Portofolio',
   },
+  a11y: {
+    skipLink: 'Langsung ke konten',
+    openMenu: 'Buka menu',
+    closeMenu: 'Tutup menu',
+    primaryNav: 'Utama',
+    language: 'Bahasa',
+  },
   nav: {
     work: 'KARYA',
     about: 'TENTANG',
@@ -17,7 +24,8 @@ export const id = {
   },
   hero: {
     eyebrow: 'HALO, SAYA REKHA',
-    headline: 'SAYA MEMBANGUN PRODUK DIGITAL DARI MASALAH NYATA.',
+    headline: ['SAYA MEMBANGUN PRODUK DIGITAL', 'DARI MASALAH NYATA.'],
+    portraitAlt: 'Potret Rekha Bahama Putra',
     role: 'Web Developer · Product Builder · Pengembangan Berbantuan AI',
     supporting: 'Mengubah masalah sehari-hari menjadi alat digital yang praktis.',
     cta: 'Lihat Karya Saya',
