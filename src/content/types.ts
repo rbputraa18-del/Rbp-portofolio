@@ -26,16 +26,26 @@ export interface CaseStudyHero {
   positioning: string
   /** Verified technology only (CONTENT.md — Content Rules). */
   stack: string
+  /** Typographic diagram in place of screenshots — e.g. the product's learning path. */
+  visual: { caption: string; path: string[] }
 }
 
 export interface CaseStudySection {
   id: string
   heading: string
+  /** Optional status tag rendered beside the heading (e.g. "IN DEVELOPMENT"). */
+  tag?: string
+  /** Optional lead statement rendered in display type. */
+  lead?: string
   paragraphs: string[]
   /** Optional supporting bullet list. */
   list?: string[]
-  /** Optional step flow (e.g. the learning loop). */
-  steps?: { label: string; description: string }[]
+  /** Optional step flow (e.g. the learning loop); `term` is the product's own name for the step. */
+  steps?: { label: string; term?: string; description: string }[]
+  /** Optional label + description capability rows. */
+  features?: { label: string; description: string }[]
+  /** Optional labeled groups of items (e.g. project tiers). */
+  groups?: { label: string; items: { text: string; note?: string }[] }[]
 }
 
 export interface CaseStudyCopy {

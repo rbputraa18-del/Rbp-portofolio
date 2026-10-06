@@ -148,50 +148,60 @@ export const en = {
         eyebrow: 'CASE STUDY',
         title: 'KodingID',
         positioning:
-          'An Indonesian-first platform for learning web development — tutorials, hands-on practice, quizzes, and guided projects, connected in one learning path.',
+          'An Indonesian-first interactive platform for learning web development — one connected path from material to practice, assessment, and real projects.',
         stack: 'HTML · CSS · JavaScript · Gemini API',
+        visual: {
+          caption: 'The learning path',
+          path: ['HTML', 'CSS', 'JavaScript', 'Latihan & Quiz', 'Proyek'],
+        },
       },
       sections: [
         {
           id: 'problem',
           heading: 'THE PROBLEM',
+          lead: 'Learning to code is hard enough. Doing it in a language you do not fully understand makes it harder.',
           paragraphs: [
-            'For Indonesian beginners, learning web development usually starts with a language barrier: much of the available programming material is written in English. The concepts are hard enough without first working through a language the learner may not be comfortable with.',
+            'Much of the web development material available online is written in English. For Indonesian beginners, that adds a language barrier on top of the concepts themselves.',
             'There is a second gap as well — understanding a concept is not the same as being able to write it. Reading about HTML only becomes real when the learner builds something with it.',
           ],
         },
         {
           id: 'idea',
           heading: 'THE IDEA',
+          lead: 'One connected path: learn, practice, test, build — in Indonesian.',
           paragraphs: [
-            'KodingID is a learning platform built for Indonesian beginners: material, practice, assessment, and real projects — all in Indonesian, in one connected path.',
-            'Instead of separate resources patched together, every step feeds the next: a concept is learned in a tutorial, applied in an exercise, tested in a quiz, and finally assembled into a project.',
+            'KodingID brings learning material, coding practice, assessment, and project-based learning together in one Indonesian-language experience.',
+            'Every step feeds the next: a concept is learned in a tutorial, applied in an exercise, tested in a quiz, and finally assembled into a guided project.',
           ],
         },
         {
           id: 'learning-loop',
           heading: 'THE LEARNING LOOP',
           paragraphs: [
-            'The whole platform is built around one path — the loop every topic follows.',
+            'The whole platform is built around one loop — the path every topic follows.',
           ],
           steps: [
             {
               label: 'LEARN',
+              term: 'Materi',
               description:
                 'Step-by-step tutorials in Indonesian — HTML, CSS, and JavaScript, starting from the very basics.',
             },
             {
               label: 'PRACTICE',
+              term: 'Latihan coding',
               description:
                 'Leveled coding exercises answered directly in the browser, with hints and instant feedback.',
             },
             {
               label: 'TEST',
+              term: 'Quiz',
               description:
                 'Topic-based quizzes with immediate correction and a plain-language explanation for every answer.',
             },
             {
               label: 'BUILD',
+              term: 'Proyek',
               description:
                 'Guided projects that turn the learned pieces into complete, working websites.',
             },
@@ -200,38 +210,77 @@ export const en = {
         {
           id: 'interactive-learning',
           heading: 'INTERACTIVE LEARNING',
+          lead: 'The learner does not only read — they practice.',
           paragraphs: [
-            'Learning happens by doing, so the exercises run in the browser. Learners write code in a built-in editor, check the answer, and see the result immediately: JavaScript answers are executed and their output captured, and HTML answers are rendered in a live preview.',
-            'The quizzes are built the same way. Every answer is corrected on the spot and followed by a short explanation in Indonesian — a wrong answer becomes a lesson instead of a dead end.',
+            'The exercises run entirely in the browser: write code, check the answer, and see the result immediately. The same principle carries through the quizzes and the tutorials.',
           ],
-          list: [
-            '9 practice exercises across Easy, Medium, Hard, and Pro levels, each worth points',
-            '30 quiz questions across HTML, CSS, and JavaScript, plus a mixed mode',
-            'Live preview in the CSS tutorial — edit a style and watch the page update',
-            'Code runner in the JavaScript tutorial — run code and read the output in the browser',
+          features: [
+            {
+              label: 'Coding exercises',
+              description:
+                '9 exercises across Easy, Medium, Hard, and Pro levels — each worth points, with hints and instant validation.',
+            },
+            {
+              label: 'Answer validation',
+              description:
+                'JavaScript answers are executed and their output captured; HTML answers render a live preview right below the editor.',
+            },
+            {
+              label: 'Quiz with explanations',
+              description:
+                '30 questions across HTML, CSS, and JavaScript plus a mixed mode — every answer is corrected on the spot and explained, with a full review at the end.',
+            },
+            {
+              label: 'In-tutorial tools',
+              description:
+                'A live preview in the CSS tutorial and a code runner in the JavaScript tutorial — edit, run, and watch the result.',
+            },
           ],
         },
         {
           id: 'project-based-learning',
           heading: 'PROJECT-BASED LEARNING',
+          lead: 'From a profile card to a portfolio website.',
           paragraphs: [
             'The project module turns the loop into something tangible. Each guided project is a complete website built step by step, with copyable code and a clear target result.',
-            'Projects are organized in three tiers — beginner, intermediate, and professional. Five are available today; several more, including a weather app, a mini online store, a blog, and a portfolio website, are marked as coming soon.',
+          ],
+          groups: [
+            {
+              label: 'Beginner',
+              items: [{ text: 'Kartu Profil' }, { text: 'Halaman Resep Makanan' }, { text: 'Landing Page Sederhana' }],
+            },
+            {
+              label: 'Intermediate',
+              items: [
+                { text: 'To-Do List' },
+                { text: 'Kalkulator' },
+                { text: 'Aplikasi Cuaca', note: 'Coming soon' },
+              ],
+            },
+            {
+              label: 'Professional',
+              items: [
+                { text: 'Toko Online Mini', note: 'Coming soon' },
+                { text: 'Blog Pribadi', note: 'Coming soon' },
+                { text: 'Website Portofolio', note: 'Coming soon' },
+              ],
+            },
           ],
         },
         {
           id: 'ai-assistant',
           heading: 'AI ASSISTANT',
+          tag: 'IN DEVELOPMENT',
           paragraphs: [
             'Kodi is the built-in learning assistant: a chat that answers questions in Indonesian, explains errors patiently, and shows example code in copyable blocks.',
-            'Kodi is powered by the Gemini API and is still an in-development capability — the interface itself reminds learners that answers may be imperfect and should be verified.',
+            'Kodi is built on the Gemini API (Gemini 2.0 Flash) and is still a young capability — the interface itself reminds learners that answers may be imperfect and should be verified.',
           ],
         },
         {
           id: 'my-role',
           heading: 'MY ROLE',
           paragraphs: [
-            'KodingID is my own project, designed and built from the first idea to the current implementation.',
+            'KodingID is my own project — I shaped the idea, designed the experience, and built the product that exists today.',
           ],
           list: [
             'Product thinking — shaping the learning path and the loop the platform is built around',
@@ -243,10 +292,15 @@ export const en = {
         {
           id: 'current-status',
           heading: 'CURRENT STATUS',
+          tag: 'IN DEVELOPMENT',
           paragraphs: [
-            'KodingID is still in development — an early-stage product, not a finished one.',
-            'What works today: an HTML course with six lessons, the CSS and JavaScript introductions, 9 practice exercises, 30 quiz questions, five guided projects, and the first version of the AI assistant.',
-            'The direction ahead is visible in the product itself — locked lessons across the three curricula and upcoming projects marked "coming soon".',
+            'KodingID is still in development — an early-stage product being shaped and improved, not a finished one.',
+          ],
+          list: [
+            'An HTML course with six lessons, plus the CSS and JavaScript introductions',
+            '9 practice exercises and 30 quiz questions',
+            'Five guided projects, with more marked as coming soon',
+            'The first version of the AI assistant',
           ],
         },
       ],

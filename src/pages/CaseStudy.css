@@ -1,6 +1,6 @@
 /* Case-study page — editorial layout on the existing tokens
    (DESIGN_SYSTEM.md): display headings, mono metadata, hairline rules,
-   generous whitespace. Mobile-first. */
+   generous whitespace. Mobile-first; no horizontal overflow. */
 
 .case-study {
   padding-block: var(--space-10) var(--section-space);
@@ -24,16 +24,31 @@
 /* ---------- Hero ---------- */
 
 .case-study-hero {
-  margin-bottom: var(--space-12);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-10);
+  margin-bottom: var(--section-space);
 }
 
 .case-study-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
   margin-bottom: var(--space-6);
+  animation: case-study-reveal var(--duration-slow) var(--ease-out) 0.05s backwards;
+}
+
+.case-study-eyebrow-rule {
+  flex: none;
+  width: var(--space-10);
+  height: 1px;
+  background-color: var(--color-accent);
 }
 
 .case-study-title {
   font-size: var(--text-hero);
   margin-bottom: var(--space-6);
+  animation: case-study-reveal var(--duration-slow) var(--ease-out) 0.15s backwards;
 }
 
 .case-study-positioning {
@@ -41,6 +56,7 @@
   max-width: 46ch;
   font-size: var(--text-lg);
   color: var(--color-text);
+  animation: case-study-reveal var(--duration-slow) var(--ease-out) 0.25s backwards;
 }
 
 .case-study-meta {
@@ -50,6 +66,7 @@
   margin-top: var(--space-10);
   padding-top: var(--space-6);
   border-top: 1px solid var(--color-border);
+  animation: case-study-reveal var(--duration-slow) var(--ease-out) 0.35s backwards;
 }
 
 .case-study-meta-row {
@@ -75,39 +92,68 @@
   color: var(--color-text);
 }
 
-/* Status pill — same treatment as the project previews. */
+/* Status — accent variant so "in development" reads as the current state. */
 .case-study-status {
   display: inline-block;
   padding: var(--space-1) var(--space-3);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-accent);
   border-radius: 999px;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: var(--color-accent);
 }
 
-/* ---------- Visual slot ---------- */
+/* ---------- Hero visual — typographic path diagram ---------- */
 
-.case-study-visual {
+.case-study-hero-visual {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  aspect-ratio: 16 / 9;
-  margin-bottom: var(--space-12);
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-6);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  text-align: center;
+  animation: case-study-reveal var(--duration-slow) var(--ease-out) 0.3s backwards;
 }
 
-.case-study-visual-label {
-  padding-inline: var(--space-4);
+.case-study-hero-visual-caption {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-text-secondary);
+}
+
+.case-study-path {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-path-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.case-study-path-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.case-study-path-arrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  transform: rotate(90deg);
+  transform-origin: center;
 }
 
 /* ---------- Sections ---------- */
@@ -120,8 +166,45 @@
   border-top: 1px solid var(--color-border);
 }
 
+.case-study-section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.case-study-section-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
+}
+
 .case-study-section-heading {
   font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* Section status tag — e.g. "IN DEVELOPMENT". */
+.case-study-tag {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-accent);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.case-study-lead {
+  margin: 0;
+  max-width: 30ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3.2vw, 1.9rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
 }
 
 .case-study-paragraph {
@@ -130,6 +213,7 @@
   color: var(--color-text-secondary);
 }
 
+.case-study-lead + .case-study-paragraph,
 .case-study-paragraph + .case-study-paragraph {
   margin-top: var(--space-4);
 }
@@ -148,7 +232,8 @@
   color: var(--color-accent);
 }
 
-/* Learning-loop steps — vertical flow along a hairline rule. */
+/* ---------- Learning loop — stacked flow on mobile ---------- */
+
 .case-study-steps {
   display: flex;
   flex-direction: column;
@@ -170,7 +255,7 @@
   content: '';
   position: absolute;
   left: -3px;
-  top: 0.45em;
+  top: 0.4em;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -179,10 +264,10 @@
 
 .case-study-step-index {
   flex: none;
-  padding-top: 0.3em;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.16em;
+  padding-top: 0.15em;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: 1;
   color: var(--color-accent);
 }
 
@@ -198,38 +283,242 @@
   color: var(--color-text);
 }
 
+.case-study-step-term {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
 .case-study-step-description {
   margin: 0;
   max-width: 56ch;
   color: var(--color-text-secondary);
 }
 
+/* ---------- Interactive capabilities — label + description rows ---------- */
+
+.case-study-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.case-study-feature-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.case-study-feature-description {
+  margin: 0;
+  max-width: 60ch;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Project tiers ---------- */
+
+.case-study-groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-6);
+}
+
+.case-study-group {
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.case-study-group-label {
+  margin-bottom: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.case-study-group-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-group-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  color: var(--color-text);
+}
+
+.case-study-group-note {
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Footer nav ---------- */
+
 .case-study-footer-nav {
   margin-top: var(--space-16);
 }
 
-/* Tablet+ — meta rows side by side where space allows */
+/* ---------- Tablet ---------- */
+
 @media (min-width: 768px) {
   .case-study-meta {
     flex-direction: row;
     flex-wrap: wrap;
     gap: var(--space-10);
   }
+
+  /* Path diagram flows horizontally; arrows point right again. */
+  .case-study-path {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4) var(--space-6);
+  }
+
+  .case-study-path-step {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .case-study-path-arrow {
+    transform: none;
+  }
+
+  .case-study-feature {
+    flex-direction: row;
+    gap: var(--space-8);
+  }
+
+  .case-study-feature-label {
+    flex: none;
+    width: 11rem;
+    padding-top: 0.15em;
+  }
+
+  .case-study-feature-description {
+    flex: 1;
+  }
+
+  .case-study-groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-8);
+  }
 }
 
-/* Desktop — editorial two-column sections: heading left, body right. */
+/* ---------- Desktop ---------- */
+
 @media (min-width: 1024px) {
+  .case-study-hero {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-8);
+    align-items: stretch;
+  }
+
+  .case-study-hero-content {
+    grid-column: 1 / 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .case-study-hero-visual {
+    grid-column: 8 / -1;
+    padding: var(--space-10);
+  }
+
   .case-study-section {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: var(--space-8);
     padding-block: var(--space-12);
   }
 
-  .case-study-section-heading {
+  .case-study-section-header {
     grid-column: 1 / 4;
   }
 
   .case-study-section-body {
     grid-column: 5 / -1;
+  }
+
+  /* Learning loop — horizontal sequence with arrow separators. */
+  .case-study-steps {
+    flex-direction: row;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
+  }
+
+  .case-study-step {
+    flex: 1 1 0;
+    min-width: 0;
+    display: block;
+    padding: 0;
+    border-left: none;
+  }
+
+  .case-study-step::before {
+    display: none;
+  }
+
+  .case-study-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    top: 0.1em;
+    right: -1.1em;
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+  }
+
+  .case-study-step-index {
+    display: block;
+    margin-bottom: var(--space-4);
+    font-size: clamp(2rem, 3vw, 2.75rem);
+  }
+
+  .case-study-step-label {
+    margin-bottom: var(--space-2);
+  }
+}
+
+@keyframes case-study-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
