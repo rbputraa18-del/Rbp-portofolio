@@ -135,4 +135,129 @@ export const id = {
       result: null,
     },
   },
+  caseStudy: {
+    readLabel: 'Baca studi kasus →',
+    backToWork: 'Kembali ke karya',
+    meta: { type: 'Jenis', status: 'Status', stack: 'Teknologi' },
+  },
+  // Konten studi kasus diverifikasi terhadap sumber KodingID
+  // (E:\Tugas\XAMPP\htdocs\koding.id) — hanya yang benar-benar ada.
+  caseStudies: {
+    kodingid: {
+      hero: {
+        eyebrow: 'STUDI KASUS',
+        title: 'KodingID',
+        positioning:
+          'Platform belajar pengembangan web berbahasa Indonesia — tutorial, latihan langsung, kuis, dan proyek terpandu, terhubung dalam satu jalur belajar.',
+        stack: 'HTML · CSS · JavaScript · Gemini API',
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'MASALAHNYA',
+          paragraphs: [
+            'Bagi pemula Indonesia, belajar web development biasanya dimulai dengan hambatan bahasa: sebagian besar materi pemrograman yang tersedia ditulis dalam bahasa Inggris. Konsepnya saja sudah cukup sulit, apalagi harus melewati bahasa yang belum tentu dikuasai terlebih dahulu.',
+            'Ada jarak kedua juga — memahami konsep tidak sama dengan bisa menuliskannya. Membaca tentang HTML baru terasa nyata ketika pembelajar membangun sesuatu dengannya.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'IDENYA',
+          paragraphs: [
+            'KodingID adalah platform belajar yang dibangun untuk pemula Indonesia: materi, latihan, penilaian, dan proyek nyata — semuanya dalam Bahasa Indonesia, dalam satu jalur yang terhubung.',
+            'Alih-alih sumber belajar terpisah yang disambung-sambung, setiap langkah mengalir ke langkah berikutnya: konsep dipelajari di tutorial, diterapkan di latihan, diuji di kuis, dan akhirnya dirangkai menjadi proyek.',
+          ],
+        },
+        {
+          id: 'learning-loop',
+          heading: 'ALUR BELAJAR',
+          paragraphs: [
+            'Seluruh platform dibangun di sekitar satu jalur — alur yang dilalui setiap topik.',
+          ],
+          steps: [
+            {
+              label: 'BELAJAR',
+              description:
+                'Tutorial bertahap dalam Bahasa Indonesia — HTML, CSS, dan JavaScript, mulai dari yang paling dasar.',
+            },
+            {
+              label: 'LATIHAN',
+              description:
+                'Latihan coding bertingkat yang dikerjakan langsung di browser, dengan petunjuk dan umpan balik instan.',
+            },
+            {
+              label: 'UJI',
+              description:
+                'Kuis per topik dengan koreksi langsung dan penjelasan yang mudah dipahami untuk setiap jawaban.',
+            },
+            {
+              label: 'BANGUN',
+              description:
+                'Proyek terpandu yang mengubah potongan-potongan materi menjadi website utuh yang berfungsi.',
+            },
+          ],
+        },
+        {
+          id: 'interactive-learning',
+          heading: 'BELAJAR INTERAKTIF',
+          paragraphs: [
+            'Belajar terjadi lewat praktik, jadi latihannya berjalan di browser. Pembelajar menulis kode di editor bawaan, memeriksa jawaban, dan langsung melihat hasilnya: jawaban JavaScript dieksekusi dan keluarannya ditangkap, sementara jawaban HTML ditampilkan dalam pratinjau langsung.',
+            'Kuisnya dibangun dengan cara yang sama. Setiap jawaban langsung dikoreksi dan diikuti penjelasan singkat dalam Bahasa Indonesia — jawaban salah menjadi pelajaran, bukan jalan buntu.',
+          ],
+          list: [
+            '9 latihan coding dari level Easy, Medium, Hard, sampai Pro, masing-masing bernilai poin',
+            '30 soal kuis untuk HTML, CSS, dan JavaScript, plus mode campuran',
+            'Live preview di tutorial CSS — ubah satu style dan lihat halamannya berubah',
+            'Code runner di tutorial JavaScript — jalankan kode dan baca keluarannya di browser',
+          ],
+        },
+        {
+          id: 'project-based-learning',
+          heading: 'BELAJAR BERBASIS PROYEK',
+          paragraphs: [
+            'Modul proyek mengubah alur belajar menjadi sesuatu yang nyata. Setiap proyek terpandu adalah website utuh yang dibangun langkah demi langkah, dengan kode yang bisa disalin dan target hasil yang jelas.',
+            'Proyek disusun dalam tiga tingkat — pemula, menengah, dan profesional. Lima sudah tersedia hari ini; beberapa lagi — termasuk aplikasi cuaca, toko online mini, blog, dan website portofolio — ditandai sebagai segera hadir.',
+          ],
+        },
+        {
+          id: 'ai-assistant',
+          heading: 'ASISTEN AI',
+          paragraphs: [
+            'Kodi adalah asisten belajar bawaan: chat yang menjawab pertanyaan dalam Bahasa Indonesia, menjelaskan error dengan sabar, dan menunjukkan contoh kode dalam blok yang bisa disalin.',
+            'Kodi ditenagai oleh Gemini API dan masih merupakan kemampuan yang sedang dikembangkan — antarmukanya sendiri mengingatkan pembelajar bahwa jawabannya mungkin tidak sempurna dan perlu diverifikasi.',
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'PERAN SAYA',
+          paragraphs: [
+            'KodingID adalah proyek saya sendiri, dirancang dan dibangun dari ide awal sampai implementasi saat ini.',
+          ],
+          list: [
+            'Product thinking — merancang jalur belajar dan alur yang menjadi fondasi platform',
+            'UI/UX & pengembangan frontend — mendesain dan membangun platformnya sendiri',
+            'Logika pembelajaran interaktif — validasi latihan, alur kuis, live preview, dan code runner',
+            'Pengembangan berbantuan AI — mengintegrasikan asisten belajar berbasis Gemini',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'STATUS SAAT INI',
+          paragraphs: [
+            'KodingID masih dalam pengembangan — produk tahap awal, belum selesai.',
+            'Yang sudah berjalan hari ini: kursus HTML dengan enam pelajaran, pengenalan CSS dan JavaScript, 9 latihan coding, 30 soal kuis, lima proyek terpandu, dan versi pertama asisten AI.',
+            'Arah selanjutnya terlihat langsung di produknya — pelajaran yang masih terkunci di tiga kurikulum dan proyek mendatang bertanda "segera hadir".',
+          ],
+        },
+      ],
+      next: {
+        heading: 'SELANJUTNYA',
+        items: [
+          'Melanjutkan kurikulum — pelajaran HTML, CSS, dan JavaScript yang sudah direncanakan tapi masih terkunci',
+          'Merilis proyek terpandu berikutnya, dari aplikasi cuaca sampai website portofolio',
+          'Mengembangkan asisten AI lebih jauh — bagian terbaru dari platform ini',
+        ],
+      },
+    },
+  },
 } satisfies Dictionary

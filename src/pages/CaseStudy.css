@@ -1,0 +1,235 @@
+/* Case-study page — editorial layout on the existing tokens
+   (DESIGN_SYSTEM.md): display headings, mono metadata, hairline rules,
+   generous whitespace. Mobile-first. */
+
+.case-study {
+  padding-block: var(--space-10) var(--section-space);
+}
+
+.case-study-back {
+  display: inline-block;
+  margin-bottom: var(--space-12);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.case-study-back:hover {
+  color: var(--color-accent-hover);
+}
+
+/* ---------- Hero ---------- */
+
+.case-study-hero {
+  margin-bottom: var(--space-12);
+}
+
+.case-study-eyebrow {
+  margin-bottom: var(--space-6);
+}
+
+.case-study-title {
+  font-size: var(--text-hero);
+  margin-bottom: var(--space-6);
+}
+
+.case-study-positioning {
+  margin: 0;
+  max-width: 46ch;
+  font-size: var(--text-lg);
+  color: var(--color-text);
+}
+
+.case-study-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.case-study-meta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.case-study-meta-label {
+  flex: none;
+  width: 6.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.case-study-meta-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+}
+
+/* Status pill — same treatment as the project previews. */
+.case-study-status {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Visual slot ---------- */
+
+.case-study-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  margin-bottom: var(--space-12);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.case-study-visual-label {
+  padding-inline: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* ---------- Sections ---------- */
+
+.case-study-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  padding-block: var(--space-10);
+  border-top: 1px solid var(--color-border);
+}
+
+.case-study-section-heading {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.case-study-paragraph {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--color-text-secondary);
+}
+
+.case-study-paragraph + .case-study-paragraph {
+  margin-top: var(--space-4);
+}
+
+.case-study-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 0;
+  padding-left: 1.25em;
+  max-width: 62ch;
+  color: var(--color-text-secondary);
+}
+
+.case-study-list li::marker {
+  color: var(--color-accent);
+}
+
+/* Learning-loop steps — vertical flow along a hairline rule. */
+.case-study-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-study-step {
+  position: relative;
+  display: flex;
+  gap: var(--space-4);
+  padding-left: var(--space-6);
+  border-left: 1px solid var(--color-border);
+}
+
+.case-study-step::before {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 0.45em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
+.case-study-step-index {
+  flex: none;
+  padding-top: 0.3em;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+}
+
+.case-study-step-content {
+  min-width: 0;
+}
+
+.case-study-step-label {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.16em;
+  color: var(--color-text);
+}
+
+.case-study-step-description {
+  margin: 0;
+  max-width: 56ch;
+  color: var(--color-text-secondary);
+}
+
+.case-study-footer-nav {
+  margin-top: var(--space-16);
+}
+
+/* Tablet+ — meta rows side by side where space allows */
+@media (min-width: 768px) {
+  .case-study-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-10);
+  }
+}
+
+/* Desktop — editorial two-column sections: heading left, body right. */
+@media (min-width: 1024px) {
+  .case-study-section {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-8);
+    padding-block: var(--space-12);
+  }
+
+  .case-study-section-heading {
+    grid-column: 1 / 4;
+  }
+
+  .case-study-section-body {
+    grid-column: 5 / -1;
+  }
+}

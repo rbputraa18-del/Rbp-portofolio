@@ -135,4 +135,129 @@ export const en = {
       result: null,
     },
   },
+  caseStudy: {
+    readLabel: 'Read case study →',
+    backToWork: 'Back to work',
+    meta: { type: 'Type', status: 'Status', stack: 'Stack' },
+  },
+  // Case-study copy is verified against the KodingID source
+  // (E:\Tugas\XAMPP\htdocs\koding.id) — only what actually exists.
+  caseStudies: {
+    kodingid: {
+      hero: {
+        eyebrow: 'CASE STUDY',
+        title: 'KodingID',
+        positioning:
+          'An Indonesian-first platform for learning web development — tutorials, hands-on practice, quizzes, and guided projects, connected in one learning path.',
+        stack: 'HTML · CSS · JavaScript · Gemini API',
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'THE PROBLEM',
+          paragraphs: [
+            'For Indonesian beginners, learning web development usually starts with a language barrier: much of the available programming material is written in English. The concepts are hard enough without first working through a language the learner may not be comfortable with.',
+            'There is a second gap as well — understanding a concept is not the same as being able to write it. Reading about HTML only becomes real when the learner builds something with it.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'THE IDEA',
+          paragraphs: [
+            'KodingID is a learning platform built for Indonesian beginners: material, practice, assessment, and real projects — all in Indonesian, in one connected path.',
+            'Instead of separate resources patched together, every step feeds the next: a concept is learned in a tutorial, applied in an exercise, tested in a quiz, and finally assembled into a project.',
+          ],
+        },
+        {
+          id: 'learning-loop',
+          heading: 'THE LEARNING LOOP',
+          paragraphs: [
+            'The whole platform is built around one path — the loop every topic follows.',
+          ],
+          steps: [
+            {
+              label: 'LEARN',
+              description:
+                'Step-by-step tutorials in Indonesian — HTML, CSS, and JavaScript, starting from the very basics.',
+            },
+            {
+              label: 'PRACTICE',
+              description:
+                'Leveled coding exercises answered directly in the browser, with hints and instant feedback.',
+            },
+            {
+              label: 'TEST',
+              description:
+                'Topic-based quizzes with immediate correction and a plain-language explanation for every answer.',
+            },
+            {
+              label: 'BUILD',
+              description:
+                'Guided projects that turn the learned pieces into complete, working websites.',
+            },
+          ],
+        },
+        {
+          id: 'interactive-learning',
+          heading: 'INTERACTIVE LEARNING',
+          paragraphs: [
+            'Learning happens by doing, so the exercises run in the browser. Learners write code in a built-in editor, check the answer, and see the result immediately: JavaScript answers are executed and their output captured, and HTML answers are rendered in a live preview.',
+            'The quizzes are built the same way. Every answer is corrected on the spot and followed by a short explanation in Indonesian — a wrong answer becomes a lesson instead of a dead end.',
+          ],
+          list: [
+            '9 practice exercises across Easy, Medium, Hard, and Pro levels, each worth points',
+            '30 quiz questions across HTML, CSS, and JavaScript, plus a mixed mode',
+            'Live preview in the CSS tutorial — edit a style and watch the page update',
+            'Code runner in the JavaScript tutorial — run code and read the output in the browser',
+          ],
+        },
+        {
+          id: 'project-based-learning',
+          heading: 'PROJECT-BASED LEARNING',
+          paragraphs: [
+            'The project module turns the loop into something tangible. Each guided project is a complete website built step by step, with copyable code and a clear target result.',
+            'Projects are organized in three tiers — beginner, intermediate, and professional. Five are available today; several more, including a weather app, a mini online store, a blog, and a portfolio website, are marked as coming soon.',
+          ],
+        },
+        {
+          id: 'ai-assistant',
+          heading: 'AI ASSISTANT',
+          paragraphs: [
+            'Kodi is the built-in learning assistant: a chat that answers questions in Indonesian, explains errors patiently, and shows example code in copyable blocks.',
+            'Kodi is powered by the Gemini API and is still an in-development capability — the interface itself reminds learners that answers may be imperfect and should be verified.',
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'MY ROLE',
+          paragraphs: [
+            'KodingID is my own project, designed and built from the first idea to the current implementation.',
+          ],
+          list: [
+            'Product thinking — shaping the learning path and the loop the platform is built around',
+            'UI/UX & frontend development — designing and building the platform itself',
+            'Interactive learning logic — exercise validation, quiz flow, live preview, and code runner',
+            'AI-assisted development — integrating the Gemini-powered learning assistant',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'CURRENT STATUS',
+          paragraphs: [
+            'KodingID is still in development — an early-stage product, not a finished one.',
+            'What works today: an HTML course with six lessons, the CSS and JavaScript introductions, 9 practice exercises, 30 quiz questions, five guided projects, and the first version of the AI assistant.',
+            'The direction ahead is visible in the product itself — locked lessons across the three curricula and upcoming projects marked "coming soon".',
+          ],
+        },
+      ],
+      next: {
+        heading: "WHAT'S NEXT",
+        items: [
+          'Continue the curricula — the HTML, CSS, and JavaScript lessons that are planned but still locked',
+          'Release the upcoming guided projects, from the weather app to the portfolio website',
+          'Develop the AI assistant further — it is still the newest part of the platform',
+        ],
+      },
+    },
+  },
 } satisfies Dictionary

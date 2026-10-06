@@ -15,13 +15,14 @@ interface ProjectPreviewProps {
  * visual slot. The visual slot currently renders a neutral placeholder —
  * real screenshots are evidence and will only be added once the owner
  * supplies them (PROJECT_BRIEF.md — Content Integrity).
- * Case-study links arrive with the case-study pages in Phase 5.
+ * A case-study link is shown once a project's case-study content exists.
  */
 export function ProjectPreview({ project, copy, index }: ProjectPreviewProps) {
   const t = useDictionary()
   const number = String(index + 1).padStart(2, '0')
   const featured = index === 0
   const flipped = index % 2 === 1
+  const caseStudy = t.caseStudies[project.id]
 
   const className = ['project-preview']
   if (featured) className.push('is-featured')
@@ -41,6 +42,11 @@ export function ProjectPreview({ project, copy, index }: ProjectPreviewProps) {
           <span className="project-preview-status">{t.status[project.status]}</span>
         </div>
         <p className="project-preview-description">{copy.description}</p>
+        {caseStudy ? (
+          <a className="project-preview-link" href={`#${project.caseStudyRoute}`}>
+            {t.caseStudy.readLabel}
+          </a>
+        ) : null}
       </div>
       <div className="project-preview-visual">
         <span className="project-preview-visual-label">{t.selectedWork.visualPending}</span>

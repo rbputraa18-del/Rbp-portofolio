@@ -66,6 +66,20 @@
   color: var(--color-text-secondary);
 }
 
+.project-preview-link {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.project-preview-link:hover {
+  color: var(--color-accent-hover);
+}
+
 /* Visual slot — neutral frame until real screenshots are supplied. */
 .project-preview-visual {
   display: flex;

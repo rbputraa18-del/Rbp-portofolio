@@ -6,6 +6,16 @@
 export const PROJECT_STATUSES = ['in-development', 'early'] as const
 export type ProjectStatus = (typeof PROJECT_STATUSES)[number]
 
+/** All project ids — declared before ProjectMeta so `id` can be typed as the union. */
+export const PROJECT_IDS = [
+  're17-control',
+  'personal-os',
+  'kodingid',
+  'maw-inventory',
+  'web-umkm',
+] as const
+export type ProjectId = (typeof PROJECT_IDS)[number]
+
 /** 'public' = shown in full · 'selective' = shown but restricted (RE17 — never expose confidential store information). */
 export type ProjectVisibility = 'public' | 'selective'
 
@@ -21,7 +31,7 @@ export interface ProjectImages {
 }
 
 export interface ProjectMeta {
-  id: string
+  id: ProjectId
   status: ProjectStatus
   visibility: ProjectVisibility
   caseStudyRoute: string
@@ -77,7 +87,9 @@ export const PROJECTS = [
   },
 ] as const satisfies readonly ProjectMeta[]
 
-export type ProjectId = (typeof PROJECTS)[number]['id']
+export function isProjectId(value: string): value is ProjectId {
+  return PROJECTS.some((project) => project.id === value)
+}
 
 export function getProjectMeta(id: ProjectId): ProjectMeta {
   const meta = PROJECTS.find((project) => project.id === id)
