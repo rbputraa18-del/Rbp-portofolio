@@ -196,7 +196,9 @@ function CaseStudySectionView({ section, index }: { section: CaseStudySection; i
         ) : null}
         {section.images ? (
           <div
-            className={`case-study-images${section.images.length > 1 ? ' has-pair' : ''}`}
+            className={`case-study-images${
+              section.images.length > 1 ? ' has-pair' : ''
+            }${section.images.length > 2 ? ' has-feature' : ''}`}
           >
             {section.images.map((image) => (
               <figure key={image.src} className="case-study-figure">

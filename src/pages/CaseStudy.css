@@ -484,12 +484,13 @@
     gap: var(--space-8);
   }
 
-  /* Screenshot sets pair up; the first (feature) shot spans both columns. */
+  /* Screenshot sets pair up; with three or more images the first (feature)
+     shot spans both columns above the pair. */
   .case-study-images.has-pair {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .case-study-images.has-pair .case-study-figure:first-child {
+  .case-study-images.has-feature .case-study-figure:first-child {
     grid-column: 1 / -1;
   }
 }

@@ -1,4 +1,9 @@
-import { PERSONAL_OS_SCREENSHOTS } from '../../data/assets'
+import {
+  KODINGID_SCREENSHOTS,
+  MAW_INVENTORY_SCREENSHOTS,
+  PERSONAL_OS_SCREENSHOTS,
+  WEB_UMKM_SCREENSHOTS,
+} from '../../data/assets'
 import type { Dictionary } from '../types'
 
 /**
@@ -120,9 +125,12 @@ export const en = {
       type: 'Offline Inventory Management',
       description:
         'An offline-oriented inventory application designed to help manage products and stock-related workflows.',
-      problem: null,
-      thinking: null,
-      solution: null,
+      problem:
+        'Small stores still track stock by hand, and existing tools assume stable internet and trained operators.',
+      thinking:
+        'An offline-first desktop app as simple as a phone app — with automatic backups.',
+      solution:
+        'A local-first inventory system covering products, stock movements, POS sales, reports, and backups.',
       result: null,
     },
     'web-umkm': {
@@ -130,9 +138,12 @@ export const en = {
       type: 'Business Website / Landing Page',
       description:
         'A modern business website designed to present a business, its offering, and customer contact experience.',
-      problem: null,
-      thinking: null,
-      solution: null,
+      problem:
+        'Many small businesses still have no proper online presence, and generic templates do not represent them.',
+      thinking:
+        'One strong single-page design per business — built around the personality of the business itself.',
+      solution:
+        'A set of single-file example websites for different business types, from barbershops and home cooking to coffee shops and digital invitations.',
       result: null,
     },
   },
@@ -296,6 +307,278 @@ export const en = {
         ],
       },
     },
+    'maw-inventory': {
+      hero: {
+        eyebrow: 'CASE STUDY',
+        title: 'Maw Inventory',
+        positioning:
+          'An offline-first desktop inventory system built for small-store counters — simple enough for staff who have never used business software.',
+        stack: 'Electron · React · TypeScript · Prisma + SQLite · Tailwind CSS',
+        visual: {
+          caption: 'The dashboard — stock and sales at a glance',
+          image: {
+            ...MAW_INVENTORY_SCREENSHOTS.dashboard,
+            alt: 'The Maw Inventory dashboard — KPI cards for revenue, products, and stock health, with revenue trend and sales versus profit charts',
+          },
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'THE PROBLEM',
+          lead: 'Inventory tools feel built for offices — not for a busy store counter.',
+          paragraphs: [
+            'Small stores still run on paper notes and memory. Stock is counted by hand, reorders are guessed, and mistakes only surface when a product is already gone.',
+            'Existing software does not help much. It assumes a stable internet connection, a trained operator, and a business process that small stores simply do not have.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'THE IDEA',
+          lead: 'Stock management that works at the counter — offline, automatic, and phone-simple.',
+          paragraphs: [
+            'Maw Inventory is a desktop application that runs fully offline on a local database, so a store keeps working even when the internet does not.',
+            'The interface follows one rule: it should feel as familiar as a smartphone app. Every screen is in Indonesian, every action is one click away, and the data backs itself up automatically.',
+          ],
+        },
+        {
+          id: 'system',
+          heading: 'THE SYSTEM',
+          lead: 'From product shelf to sales report in one app.',
+          paragraphs: [
+            'The system follows the store’s daily loop: register products, move stock, sell at the counter, and read the results.',
+          ],
+          features: [
+            {
+              label: 'Product catalog',
+              description:
+                'Every item gets an SKU, purchase price, and live stock count — searchable from anywhere with Ctrl+F.',
+            },
+            {
+              label: 'Inventory engine',
+              description:
+                'Stock in, stock out, and adjustments are recorded atomically with a complete audit trail — reference, notes, and who made each change.',
+            },
+            {
+              label: 'POS & cashier shifts',
+              description:
+                'A counter-ready cashier screen with a product catalog, cart, shift opening and closing, and cash or QRIS payment.',
+            },
+            {
+              label: 'Reports & export',
+              description:
+                'Sales reports from daily to custom ranges — top products, payment methods, and recent transactions — plus one-click Excel export.',
+            },
+            {
+              label: 'Automatic backups',
+              description: 'Local backups run automatically; cloud backup is on the roadmap.',
+            },
+          ],
+          images: [
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.products,
+              alt: 'The product list — SKU, live stock, and purchase price for every item, with search and one-click actions',
+              caption: 'Products — the master catalog with live stock',
+            },
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.stockHistory,
+              alt: 'The stock history — every stock movement with its type, quantity, reference, and note',
+              caption: 'Stock history — every movement with its audit trail',
+            },
+          ],
+        },
+        {
+          id: 'interface',
+          heading: 'THE INTERFACE',
+          lead: 'Dark, dense, and readable — designed for a real counter.',
+          paragraphs: [
+            'The interface is a dark, high-contrast workspace built for focus: dense tables stay readable, frequent actions sit one click away, and every screen follows the same navigation pattern.',
+          ],
+          images: [
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.salesReport,
+              alt: 'The sales report — total sales, transaction count, payment methods, and top products for the selected period',
+              caption: 'Sales report — from daily to custom ranges',
+            },
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.transactions,
+              alt: 'The transactions list — completed sales with invoice numbers, cashier, and payment method',
+              caption: 'Transactions — every sale with its invoice and status',
+            },
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'MY ROLE',
+          paragraphs: [
+            'Maw Inventory is my own product — I shaped the concept, designed the workflows and interface, and built the application end to end, with AI as my development assistant.',
+          ],
+          list: [
+            'Product thinking — the offline-first concept and the store’s daily loop from catalog to report',
+            'UI/UX design — the dark workspace, the phone-like simplicity, and the Indonesian-language flows',
+            'Full-stack implementation — the React frontend and the Electron main process with Prisma and SQLite',
+            'Quality & tooling — TypeScript strict mode, automated tests, and the Windows packaging setup',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'CURRENT STATUS',
+          tag: 'IN DEVELOPMENT',
+          paragraphs: [
+            'Maw Inventory is a working desktop application in active development — not a finished product, and not yet in use by real stores.',
+          ],
+          list: [
+            'The application runs offline on a local SQLite database with automatic local backups',
+            'This case study runs on fictional demo data — no real store information is shown',
+            'Cloud backup and distribution are still being worked on',
+          ],
+        },
+      ],
+      next: {
+        heading: "WHAT'S NEXT",
+        items: [
+          'Wire cloud backup so store data is safe even if the computer fails',
+          'Deepen reporting — profit margins, stock aging, and purchase history',
+          'Polish the POS flow and finish distribution packaging',
+        ],
+      },
+    },
+    'web-umkm': {
+      hero: {
+        eyebrow: 'CASE STUDY',
+        title: 'Web UMKM',
+        positioning:
+          'Example business websites for Indonesian small businesses — each one designed around the personality of the business it represents.',
+        stack: 'HTML · CSS · JavaScript',
+        visual: {
+          caption: 'Kopi Tanah — an editorial coffee-shop concept',
+          image: {
+            ...WEB_UMKM_SCREENSHOTS.kopiTanah,
+            alt: 'The Kopi Tanah coffee shop website — a split hero with a serif headline, gold script accent, and a CSS-drawn coffee bean',
+          },
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'THE PROBLEM',
+          lead: 'Most small-business websites do not look like the business.',
+          paragraphs: [
+            'Small businesses often end up with a generic template that could belong to anyone — or no website at all. The result looks the same as every competitor and does nothing for the customer walking in the door.',
+            'These example sites start from the opposite direction: the personality of the business itself.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'THE IDEA',
+          lead: 'One page, one personality.',
+          paragraphs: [
+            'Each example is a single self-contained page designed around one business: a bold barbershop, a warm home kitchen, an editorial coffee shop — each with its own type, palette, and voice.',
+            'Every site does the same three jobs: present the business, explain the offer, and route the customer to order or contact.',
+          ],
+        },
+        {
+          id: 'showcase',
+          heading: 'THE SHOWCASE',
+          lead: 'Four businesses, four very different designs.',
+          paragraphs: [
+            'The collection spans different kinds of small businesses — each page is a complete design exercise in its own right.',
+          ],
+          features: [
+            {
+              label: 'Blade & Co.',
+              description:
+                'A barbershop concept with heavy condensed typography, red accents, and a marquee of services.',
+            },
+            {
+              label: 'Dapur Mbok Ani',
+              description:
+                'A home-cooking business with a warm maroon palette and a friendly, appetising layout.',
+            },
+            {
+              label: 'Kopi Tanah',
+              description:
+                'An editorial coffee-shop concept with a split hero, serif typography, and gold accents.',
+            },
+            {
+              label: 'KALA Coffee',
+              description: 'A dark, moody coffee concept with italic serif headlines.',
+            },
+          ],
+          images: [
+            {
+              ...WEB_UMKM_SCREENSHOTS.barber,
+              alt: 'The Blade & Co. barbershop website — a black hero with condensed typography, red accents, and a services marquee',
+              caption: 'Blade & Co. — a barbershop with attitude',
+            },
+            {
+              ...WEB_UMKM_SCREENSHOTS.mbokAni,
+              alt: 'The Dapur Mbok Ani home-cooking website — a warm maroon hero with a menu CTA and ratings',
+              caption: 'Dapur Mbok Ani — home cooking, warmly presented',
+            },
+            {
+              ...WEB_UMKM_SCREENSHOTS.kala,
+              alt: 'The KALA Coffee website — a dark sepia hero with italic serif headlines',
+              caption: 'KALA Coffee — a moody, minimal concept',
+            },
+          ],
+        },
+        {
+          id: 'invitations',
+          heading: 'DIGITAL INVITATIONS',
+          lead: 'Invitations designed for the phone, not the printer.',
+          paragraphs: [
+            'Alongside the business sites, the collection includes two digital wedding-invitation designs — mobile-first pages that put the couple, the date, and the RSVP route front and center.',
+            'The couples and venues shown are fictional demo personas; each invitation is designed to be personalized per couple.',
+          ],
+          images: [
+            {
+              ...WEB_UMKM_SCREENSHOTS.undanganSage,
+              alt: 'A sage-green digital wedding invitation cover on mobile — script names, the date, and corner flourishes',
+              caption: 'A calm sage invitation, opened on a phone',
+            },
+            {
+              ...WEB_UMKM_SCREENSHOTS.undanganGold,
+              alt: 'A black-and-gold digital wedding invitation cover on mobile — serif and script names with a framed date',
+              caption: 'A black-and-gold invitation, opened on a phone',
+            },
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'MY ROLE',
+          paragraphs: [
+            'The Web UMKM collection is my own work — each concept, layout, and build was shaped and written by me, with AI as my development assistant.',
+          ],
+          list: [
+            'Concept & art direction — a distinct personality for each business type',
+            'UI design & build — complete single-file pages in HTML, CSS, and JavaScript',
+            'Responsive design — layouts tuned for phone browsing where it matters most',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'CURRENT STATUS',
+          tag: 'IN DEVELOPMENT',
+          paragraphs: [
+            'The collection is a set of demonstration builds — design exercises that show how different businesses could be presented, not deployed client websites.',
+          ],
+          list: [
+            'All business names, addresses, and contact details shown are fictional placeholders',
+            'The sites are single-file HTML pages; fonts load from Google Fonts',
+            'Some sections are still placeholders — including image areas that will become real photography',
+          ],
+        },
+      ],
+      next: {
+        heading: "WHAT'S NEXT",
+        items: [
+          'Replace CSS illustrations and emoji with real photography for each business',
+          'Complete the placeholder sections and dead links in the earlier builds',
+          'Extend the collection to more business types',
+        ],
+      },
+    },
     kodingid: {
       hero: {
         eyebrow: 'CASE STUDY',
@@ -304,8 +587,11 @@ export const en = {
           'An Indonesian-first interactive platform for learning web development — one connected path from material to practice, assessment, and real projects.',
         stack: 'HTML · CSS · JavaScript · Gemini API',
         visual: {
-          caption: 'The learning path',
-          path: ['HTML', 'CSS', 'JavaScript', 'Latihan & Quiz', 'Proyek'],
+          caption: 'The KodingID homepage',
+          image: {
+            ...KODINGID_SCREENSHOTS.homepage,
+            alt: 'The KodingID homepage — the hero with a syntax-highlighted code window, the learning stats, and Indonesian learning materials below',
+          },
         },
       },
       sections: [
@@ -359,6 +645,18 @@ export const en = {
                 'Guided projects that turn the learned pieces into complete, working websites.',
             },
           ],
+          images: [
+            {
+              ...KODINGID_SCREENSHOTS.cssLesson,
+              alt: 'The CSS tutorial — a before-and-after comparison showing the same page without CSS and with CSS',
+              caption: 'CSS tutorial — before and after CSS',
+            },
+            {
+              ...KODINGID_SCREENSHOTS.jsLesson,
+              alt: 'The JavaScript tutorial — concept cards comparing how HTML, CSS, and JavaScript each contribute to a page',
+              caption: 'JavaScript tutorial — the three languages compared',
+            },
+          ],
         },
         {
           id: 'interactive-learning',
@@ -389,6 +687,23 @@ export const en = {
                 'A live preview in the CSS tutorial and a code runner in the JavaScript tutorial — edit, run, and watch the result.',
             },
           ],
+          images: [
+            {
+              ...KODINGID_SCREENSHOTS.latihan,
+              alt: 'The coding exercises page — level filters from Easy to Pro, a score panel, and an in-browser editor with instant checking',
+              caption: 'Latihan — coding exercises with instant checking',
+            },
+            {
+              ...KODINGID_SCREENSHOTS.quizWrong,
+              alt: 'A quiz question after a wrong answer — the chosen option marked red, the correct one revealed in green, and an explanation below',
+              caption: 'Quiz — instant correction with an explanation',
+            },
+            {
+              ...KODINGID_SCREENSHOTS.quizCorrect,
+              alt: 'A quiz question answered correctly — the green confirmation, ten points added, and the explanation below',
+              caption: 'Quiz — a correct answer earns ten points',
+            },
+          ],
         },
         {
           id: 'project-based-learning',
@@ -417,6 +732,13 @@ export const en = {
                 { text: 'Blog Pribadi', note: 'Coming soon' },
                 { text: 'Website Portofolio', note: 'Coming soon' },
               ],
+            },
+          ],
+          images: [
+            {
+              ...KODINGID_SCREENSHOTS.proyek,
+              alt: 'The projects module — guided beginner projects with level steps, time estimates, and the files each project covers',
+              caption: 'Proyek — guided projects, from beginner to professional',
             },
           ],
         },

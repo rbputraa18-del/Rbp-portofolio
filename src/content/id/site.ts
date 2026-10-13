@@ -1,4 +1,9 @@
-import { PERSONAL_OS_SCREENSHOTS } from '../../data/assets'
+import {
+  KODINGID_SCREENSHOTS,
+  MAW_INVENTORY_SCREENSHOTS,
+  PERSONAL_OS_SCREENSHOTS,
+  WEB_UMKM_SCREENSHOTS,
+} from '../../data/assets'
 import type { Dictionary } from '../types'
 
 /**
@@ -120,9 +125,12 @@ export const id = {
       type: 'Manajemen Inventaris Offline',
       description:
         'Aplikasi inventaris berorientasi offline yang dirancang untuk membantu mengelola produk dan alur kerja terkait stok.',
-      problem: null,
-      thinking: null,
-      solution: null,
+      problem:
+        'Toko kecil masih mencatat stok secara manual, dan perangkat lunak yang ada mengasumsikan internet stabil dan operator terlatih.',
+      thinking:
+        'Aplikasi desktop offline-first yang sesederhana aplikasi ponsel — dengan backup otomatis.',
+      solution:
+        'Sistem inventaris local-first yang mencakup produk, pergerakan stok, penjualan POS, laporan, dan backup.',
       result: null,
     },
     'web-umkm': {
@@ -130,9 +138,12 @@ export const id = {
       type: 'Website Bisnis / Landing Page',
       description:
         'Website bisnis modern yang dirancang untuk menampilkan bisnis, penawarannya, dan pengalaman kontak bagi pelanggan.',
-      problem: null,
-      thinking: null,
-      solution: null,
+      problem:
+        'Banyak usaha kecil masih belum punya kehadiran online yang layak, dan template generik tidak mewakili mereka.',
+      thinking:
+        'Satu desain halaman tunggal yang kuat per bisnis — dibangun di sekitar kepribadian bisnisnya sendiri.',
+      solution:
+        'Kumpulan website contoh satu-file untuk berbagai jenis bisnis, dari barbershop dan masakan rumahan sampai kedai kopi dan undangan digital.',
       result: null,
     },
   },
@@ -296,6 +307,278 @@ export const id = {
         ],
       },
     },
+    'maw-inventory': {
+      hero: {
+        eyebrow: 'STUDI KASUS',
+        title: 'Maw Inventory',
+        positioning:
+          'Sistem inventaris desktop offline-first yang dibangun untuk meja kasir toko kecil — sesederhana mungkin untuk staf yang belum pernah memakai perangkat lunak bisnis.',
+        stack: 'Electron · React · TypeScript · Prisma + SQLite · Tailwind CSS',
+        visual: {
+          caption: 'Dashboard — stok dan penjualan dalam satu layar',
+          image: {
+            ...MAW_INVENTORY_SCREENSHOTS.dashboard,
+            alt: 'Dashboard Maw Inventory — kartu KPI untuk pendapatan, produk, dan kesehatan stok, dengan grafik tren pendapatan dan penjualan versus profit',
+          },
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'MASALAHNYA',
+          lead: 'Alat inventaris terasa dibuat untuk kantor — bukan untuk meja kasir yang sibuk.',
+          paragraphs: [
+            'Toko kecil masih mengandalkan catatan kertas dan ingatan. Stok dihitung manual, pemesanan ulang dikira-kira, dan kesalahan baru ketahuan ketika barang sudah habis.',
+            'Perangkat lunak yang ada juga tidak banyak membantu. Ia mengasumsikan koneksi internet stabil, operator terlatih, dan proses bisnis yang tidak dimiliki toko kecil.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'IDENYA',
+          lead: 'Manajemen stok yang bekerja di meja kasir — offline, otomatis, dan sesederhana ponsel.',
+          paragraphs: [
+            'Maw Inventory adalah aplikasi desktop yang berjalan sepenuhnya offline di database lokal, sehingga toko tetap bekerja meski internet tidak tersedia.',
+            'Antarmukanya mengikuti satu aturan: harus terasa familier seperti aplikasi smartphone. Semua layar berbahasa Indonesia, semua aksi satu klik saja, dan datanya mem-backup dirinya sendiri secara otomatis.',
+          ],
+        },
+        {
+          id: 'system',
+          heading: 'SISTEMNYA',
+          lead: 'Dari rak produk sampai laporan penjualan dalam satu aplikasi.',
+          paragraphs: [
+            'Sistemnya mengikuti siklus harian toko: daftarkan produk, gerakkan stok, jual di kasir, lalu baca hasilnya.',
+          ],
+          features: [
+            {
+              label: 'Katalog produk',
+              description:
+                'Setiap barang punya SKU, harga beli, dan jumlah stok real-time — bisa dicari dari mana saja dengan Ctrl+F.',
+            },
+            {
+              label: 'Mesin inventaris',
+              description:
+                'Stok masuk, keluar, dan penyesuaian tercatat secara atomik dengan jejak audit lengkap — referensi, catatan, dan siapa yang membuat perubahan.',
+            },
+            {
+              label: 'POS & shift kasir',
+              description:
+                'Layar kasir siap pakai dengan katalog produk, keranjang, buka-tutup shift, dan pembayaran tunai atau QRIS.',
+            },
+            {
+              label: 'Laporan & ekspor',
+              description:
+                'Laporan penjualan dari harian sampai rentang khusus — produk terlaris, metode pembayaran, dan transaksi terakhir — plus ekspor Excel sekali klik.',
+            },
+            {
+              label: 'Backup otomatis',
+              description: 'Backup lokal berjalan otomatis; backup cloud ada di peta jalan.',
+            },
+          ],
+          images: [
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.products,
+              alt: 'Daftar barang — SKU, stok real-time, dan harga beli untuk setiap barang, dengan pencarian dan aksi sekali klik',
+              caption: 'Produk — katalog utama dengan stok real-time',
+            },
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.stockHistory,
+              alt: 'Riwayat stok — setiap pergerakan stok dengan jenis, jumlah, referensi, dan catatannya',
+              caption: 'Riwayat stok — setiap pergerakan dengan jejak auditnya',
+            },
+          ],
+        },
+        {
+          id: 'interface',
+          heading: 'ANTARMUKA',
+          lead: 'Gelap, padat, dan terbaca — dirancang untuk meja kasir sungguhan.',
+          paragraphs: [
+            'Antarmukanya adalah ruang kerja gelap dengan kontras tinggi yang dibangun untuk fokus: tabel padat tetap terbaca, aksi yang sering dipakai berjarak satu klik, dan setiap layar mengikuti pola navigasi yang sama.',
+          ],
+          images: [
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.salesReport,
+              alt: 'Laporan penjualan — total penjualan, jumlah transaksi, metode pembayaran, dan produk terlaris untuk periode terpilih',
+              caption: 'Laporan penjualan — dari harian sampai rentang khusus',
+            },
+            {
+              ...MAW_INVENTORY_SCREENSHOTS.transactions,
+              alt: 'Daftar transaksi — penjualan selesai dengan nomor invoice, kasir, dan metode pembayaran',
+              caption: 'Transaksi — setiap penjualan dengan invoice dan statusnya',
+            },
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'PERAN SAYA',
+          paragraphs: [
+            'Maw Inventory adalah produk saya sendiri — saya merancang konsepnya, mendesain alur kerja dan antarmukanya, dan membangun aplikasinya dari ujung ke ujung, dengan AI sebagai asisten pengembangan.',
+          ],
+          list: [
+            'Product thinking — konsep offline-first dan siklus harian toko dari katalog sampai laporan',
+            'Desain UI/UX — ruang kerja gelap, kesederhanaan ala ponsel, dan alur berbahasa Indonesia',
+            'Implementasi full-stack — frontend React dan proses utama Electron dengan Prisma dan SQLite',
+            'Kualitas & perkakas — TypeScript strict mode, pengujian otomatis, dan penyiapan packaging Windows',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'STATUS SAAT INI',
+          tag: 'DALAM PENGEMBANGAN',
+          paragraphs: [
+            'Maw Inventory adalah aplikasi desktop yang berjalan dan masih dalam pengembangan aktif — bukan produk jadi, dan belum dipakai toko sungguhan.',
+          ],
+          list: [
+            'Aplikasi berjalan offline di database SQLite lokal dengan backup lokal otomatis',
+            'Studi kasus ini berjalan di data demo fiktif — tidak ada informasi toko sungguhan yang ditampilkan',
+            'Backup cloud dan distribusi masih dalam pengerjaan',
+          ],
+        },
+      ],
+      next: {
+        heading: 'SELANJUTNYA',
+        items: [
+          'Menghubungkan backup cloud agar data toko aman bahkan jika komputer rusak',
+          'Memperdalam laporan — margin profit, umur stok, dan riwayat pembelian',
+          'Memoles alur POS dan menyelesaikan packaging distribusi',
+        ],
+      },
+    },
+    'web-umkm': {
+      hero: {
+        eyebrow: 'STUDI KASUS',
+        title: 'Web UMKM',
+        positioning:
+          'Contoh website bisnis untuk usaha kecil Indonesia — masing-masing dirancang di sekitar kepribadian bisnis yang diwakilinya.',
+        stack: 'HTML · CSS · JavaScript',
+        visual: {
+          caption: 'Kopi Tanah — konsep kedai kopi yang editorial',
+          image: {
+            ...WEB_UMKM_SCREENSHOTS.kopiTanah,
+            alt: 'Website kedai kopi Kopi Tanah — hero terbelah dengan judul serif, aksen skrip emas, dan biji kopi yang digambar dengan CSS',
+          },
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'MASALAHNYA',
+          lead: 'Kebanyakan website usaha kecil tidak tampak seperti bisnisnya.',
+          paragraphs: [
+            'Usaha kecil sering berakhir dengan template generik yang bisa dimiliki siapa saja — atau tidak punya website sama sekali. Hasilnya terlihat sama dengan setiap pesaing dan tidak berarti apa-apa bagi pelanggan yang masuk ke pintu.',
+            'Situs-situs contoh ini memulai dari arah sebaliknya: kepribadian bisnisnya itu sendiri.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'IDENYA',
+          lead: 'Satu halaman, satu kepribadian.',
+          paragraphs: [
+            'Setiap contoh adalah satu halaman mandiri yang dirancang di sekitar satu bisnis: barbershop yang berani, dapur rumahan yang hangat, kedai kopi yang editorial — masing-masing dengan jenis huruf, palet, dan suara yang berbeda.',
+            'Setiap situs menjalankan tiga tugas yang sama: memperkenalkan bisnis, menjelaskan penawaran, dan mengarahkan pelanggan untuk memesan atau menghubungi.',
+          ],
+        },
+        {
+          id: 'showcase',
+          heading: 'GALERINYA',
+          lead: 'Empat bisnis, empat desain yang sangat berbeda.',
+          paragraphs: [
+            'Koleksinya mencakup berbagai jenis usaha kecil — setiap halaman adalah latihan desain yang utuh dengan sendirinya.',
+          ],
+          features: [
+            {
+              label: 'Blade & Co.',
+              description:
+                'Konsep barbershop dengan tipografi kondensasi tebal, aksen merah, dan marquee layanan.',
+            },
+            {
+              label: 'Dapur Mbok Ani',
+              description:
+                'Bisnis masakan rumahan dengan palet marun hangat dan tata letak yang ramah dan menggugah selera.',
+            },
+            {
+              label: 'Kopi Tanah',
+              description:
+                'Konsep kedai kopi editorial dengan hero terbelah, tipografi serif, dan aksen emas.',
+            },
+            {
+              label: 'KALA Coffee',
+              description: 'Konsep kedai kopi gelap dan moody dengan judul serif miring.',
+            },
+          ],
+          images: [
+            {
+              ...WEB_UMKM_SCREENSHOTS.barber,
+              alt: 'Website barbershop Blade & Co. — hero hitam dengan tipografi kondensasi, aksen merah, dan marquee layanan',
+              caption: 'Blade & Co. — barbershop dengan karakter',
+            },
+            {
+              ...WEB_UMKM_SCREENSHOTS.mbokAni,
+              alt: 'Website masakan rumahan Dapur Mbok Ani — hero marun hangat dengan CTA menu dan penilaian',
+              caption: 'Dapur Mbok Ani — masakan rumahan yang hangat',
+            },
+            {
+              ...WEB_UMKM_SCREENSHOTS.kala,
+              alt: 'Website KALA Coffee — hero sepia gelap dengan judul serif miring',
+              caption: 'KALA Coffee — konsep moody yang minimal',
+            },
+          ],
+        },
+        {
+          id: 'invitations',
+          heading: 'UNDANGAN DIGITAL',
+          lead: 'Undangan yang dirancang untuk ponsel, bukan mesin cetak.',
+          paragraphs: [
+            'Di samping situs bisnis, koleksinya mencakup dua desain undangan pernikahan digital — halaman mobile-first yang menempatkan pasangan, tanggal, dan rute RSVP di baris terdepan.',
+            'Pasangan dan lokasi yang ditampilkan adalah persona demo fiktif; setiap undangan dirancang untuk dipersonalisasi per pasangan.',
+          ],
+          images: [
+            {
+              ...WEB_UMKM_SCREENSHOTS.undanganSage,
+              alt: 'Sampul undangan pernikahan digital hijau sage di ponsel — nama bergaya skrip, tanggal, dan ornamen sudut',
+              caption: 'Undangan sage yang tenang, dibuka di ponsel',
+            },
+            {
+              ...WEB_UMKM_SCREENSHOTS.undanganGold,
+              alt: 'Sampul undangan pernikahan digital hitam-emas di ponsel — nama serif dan skrip dengan tanggal berbingkai',
+              caption: 'Undangan hitam-emas, dibuka di ponsel',
+            },
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'PERAN SAYA',
+          paragraphs: [
+            'Koleksi Web UMKM adalah karya saya sendiri — setiap konsep, tata letak, dan build saya bentuk dan tulis sendiri, dengan AI sebagai asisten pengembangan.',
+          ],
+          list: [
+            'Konsep & art direction — kepribadian yang berbeda untuk setiap jenis bisnis',
+            'Desain & build UI — halaman satu-file lengkap dalam HTML, CSS, dan JavaScript',
+            'Desain responsif — tata letak yang disesuaikan untuk browsing ponsel di tempat yang paling penting',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'STATUS SAAT INI',
+          tag: 'DALAM PENGEMBANGAN',
+          paragraphs: [
+            'Koleksinya adalah kumpulan build demonstrasi — latihan desain yang menunjukkan bagaimana berbagai bisnis bisa ditampilkan, bukan website klien yang sudah dideploy.',
+          ],
+          list: [
+            'Semua nama bisnis, alamat, dan detail kontak yang ditampilkan adalah placeholder fiktif',
+            'Situsnya berupa halaman HTML satu-file; font dimuat dari Google Fonts',
+            'Beberapa bagian masih berupa placeholder — termasuk area gambar yang akan diganti fotografi sungguhan',
+          ],
+        },
+      ],
+      next: {
+        heading: 'SELANJUTNYA',
+        items: [
+          'Mengganti ilustrasi CSS dan emoji dengan fotografi sungguhan untuk setiap bisnis',
+          'Menyelesaikan bagian placeholder dan tautan mati di build-build awal',
+          'Memperluas koleksi ke lebih banyak jenis bisnis',
+        ],
+      },
+    },
     kodingid: {
       hero: {
         eyebrow: 'STUDI KASUS',
@@ -304,8 +587,11 @@ export const id = {
           'Platform interaktif berbahasa Indonesia untuk belajar pengembangan web — satu jalur terhubung dari materi ke latihan, penilaian, dan proyek nyata.',
         stack: 'HTML · CSS · JavaScript · Gemini API',
         visual: {
-          caption: 'Jalur belajar',
-          path: ['HTML', 'CSS', 'JavaScript', 'Latihan & Quiz', 'Proyek'],
+          caption: 'Beranda KodingID',
+          image: {
+            ...KODINGID_SCREENSHOTS.homepage,
+            alt: 'Beranda KodingID — hero dengan jendela kode ber-highlight sintaks, statistik belajar, dan materi belajar berbahasa Indonesia di bawahnya',
+          },
         },
       },
       sections: [
@@ -359,6 +645,18 @@ export const id = {
                 'Proyek terpandu yang mengubah potongan-potongan materi menjadi website utuh yang berfungsi.',
             },
           ],
+          images: [
+            {
+              ...KODINGID_SCREENSHOTS.cssLesson,
+              alt: 'Tutorial CSS — perbandingan sebelum-dan-sesudah yang menampilkan halaman yang sama tanpa CSS dan dengan CSS',
+              caption: 'Tutorial CSS — sebelum dan sesudah CSS',
+            },
+            {
+              ...KODINGID_SCREENSHOTS.jsLesson,
+              alt: 'Tutorial JavaScript — kartu konsep yang membandingkan peran HTML, CSS, dan JavaScript dalam sebuah halaman',
+              caption: 'Tutorial JavaScript — perbandingan tiga bahasa',
+            },
+          ],
         },
         {
           id: 'interactive-learning',
@@ -389,6 +687,23 @@ export const id = {
                 'Live preview di tutorial CSS dan code runner di tutorial JavaScript — ubah, jalankan, dan lihat hasilnya.',
             },
           ],
+          images: [
+            {
+              ...KODINGID_SCREENSHOTS.latihan,
+              alt: 'Halaman latihan coding — filter level dari Easy sampai Pro, panel skor, dan editor di browser dengan pemeriksaan instan',
+              caption: 'Latihan — soal coding dengan pemeriksaan instan',
+            },
+            {
+              ...KODINGID_SCREENSHOTS.quizWrong,
+              alt: 'Soal kuis setelah jawaban salah — pilihan yang dipilih ditandai merah, jawaban benar ditampilkan hijau, dan penjelasan di bawahnya',
+              caption: 'Quiz — koreksi instan dengan penjelasan',
+            },
+            {
+              ...KODINGID_SCREENSHOTS.quizCorrect,
+              alt: 'Soal kuis yang dijawab benar — konfirmasi hijau, sepuluh poin ditambahkan, dan penjelasan di bawahnya',
+              caption: 'Quiz — jawaban benar mendapat sepuluh poin',
+            },
+          ],
         },
         {
           id: 'project-based-learning',
@@ -417,6 +732,13 @@ export const id = {
                 { text: 'Blog Pribadi', note: 'Segera hadir' },
                 { text: 'Website Portofolio', note: 'Segera hadir' },
               ],
+            },
+          ],
+          images: [
+            {
+              ...KODINGID_SCREENSHOTS.proyek,
+              alt: 'Modul proyek — proyek pemula terpandu dengan langkah level, estimasi waktu, dan file yang dicakup setiap proyek',
+              caption: 'Proyek — proyek terpandu, dari pemula sampai profesional',
             },
           ],
         },
