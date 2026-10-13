@@ -11,8 +11,9 @@ interface CaseStudyProps {
  * Case-study page, rendered entirely from the centralized dictionaries
  * (CONTENT.md — Case Study Template). One page component serves every
  * project; the content decides which sections exist. The hero visual is a
- * typographic diagram, not a screenshot — real visuals are evidence and are
- * never fabricated (PROJECT_BRIEF.md — Content Integrity).
+ * genuine screenshot when one exists, otherwise a typographic diagram —
+ * visuals are evidence and are never fabricated (PROJECT_BRIEF.md —
+ * Content Integrity).
  */
 export function CaseStudy({ projectId }: CaseStudyProps) {
   const t = useDictionary()
@@ -28,6 +29,12 @@ export function CaseStudy({ projectId }: CaseStudyProps) {
     paragraphs: [],
     list: caseStudy.next.items,
   }
+
+  // Hero visual: a genuine screenshot when the project supplies one,
+  // otherwise the typographic path diagram (PROJECT_BRIEF.md — Content
+  // Integrity: real visuals are evidence and are never fabricated).
+  const heroImage = caseStudy.hero.visual.image
+  const heroPath = caseStudy.hero.visual.path ?? []
 
   return (
     <main id="main" className="case-study">
@@ -60,25 +67,40 @@ export function CaseStudy({ projectId }: CaseStudyProps) {
             </div>
           </div>
 
-          {/* Typographic diagram — the product's learning path (verified
-              against the KodingID source; not a fabricated screenshot). */}
-          <div className="case-study-hero-visual" aria-label={caseStudy.hero.visual.caption}>
-            <span className="case-study-hero-visual-caption">
-              {caseStudy.hero.visual.caption}
-            </span>
-            <ol className="case-study-path">
-              {caseStudy.hero.visual.path.map((step, index) => (
-                <li key={step} className="case-study-path-step">
-                  <span className="case-study-path-name">{step}</span>
-                  {index < caseStudy.hero.visual.path.length - 1 ? (
-                    <span className="case-study-path-arrow" aria-hidden="true">
-                      →
-                    </span>
-                  ) : null}
-                </li>
-              ))}
-            </ol>
-          </div>
+          {heroImage ? (
+            <figure className="case-study-hero-visual case-study-hero-visual--image">
+              <img
+                className="case-study-figure-image"
+                src={heroImage.src}
+                alt={heroImage.alt}
+                width={heroImage.width}
+                height={heroImage.height}
+              />
+              <figcaption className="case-study-figure-caption">
+                {caseStudy.hero.visual.caption}
+              </figcaption>
+            </figure>
+          ) : (
+            <div className="case-study-hero-visual" aria-label={caseStudy.hero.visual.caption}>
+              <span className="case-study-hero-visual-caption">
+                {caseStudy.hero.visual.caption}
+              </span>
+              {heroPath.length > 0 ? (
+                <ol className="case-study-path">
+                  {heroPath.map((step, index) => (
+                    <li key={step} className="case-study-path-step">
+                      <span className="case-study-path-name">{step}</span>
+                      {index < heroPath.length - 1 ? (
+                        <span className="case-study-path-arrow" aria-hidden="true">
+                          →
+                        </span>
+                      ) : null}
+                    </li>
+                  ))}
+                </ol>
+              ) : null}
+            </div>
+          )}
         </header>
 
         {caseStudy.sections.map((section, index) => (
@@ -171,6 +193,29 @@ function CaseStudySectionView({ section, index }: { section: CaseStudySection; i
               <li key={item}>{item}</li>
             ))}
           </ul>
+        ) : null}
+        {section.images ? (
+          <div
+            className={`case-study-images${section.images.length > 1 ? ' has-pair' : ''}`}
+          >
+            {section.images.map((image) => (
+              <figure key={image.src} className="case-study-figure">
+                <img
+                  className="case-study-figure-image"
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  loading="lazy"
+                />
+                {image.caption ? (
+                  <figcaption className="case-study-figure-caption">
+                    {image.caption}
+                  </figcaption>
+                ) : null}
+              </figure>
+            ))}
+          </div>
         ) : null}
       </div>
     </section>

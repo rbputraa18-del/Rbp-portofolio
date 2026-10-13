@@ -1,3 +1,4 @@
+import { PERSONAL_OS_SCREENSHOTS } from '../../data/assets'
 import type { Dictionary } from '../types'
 
 /**
@@ -143,6 +144,158 @@ export const en = {
   // Case-study copy is verified against the KodingID source
   // (E:\Tugas\XAMPP\htdocs\koding.id) — only what actually exists.
   caseStudies: {
+    'personal-os': {
+      hero: {
+        eyebrow: 'CASE STUDY',
+        title: 'Personal OS',
+        positioning:
+          'A warm personal digital home — a workspace designed to bring thinking, learning, planning, and everyday activities into one calm place.',
+        stack: 'Next.js · React · TypeScript · Tailwind CSS · TipTap · Framer Motion',
+        visual: {
+          caption: 'The Home workspace',
+          image: {
+            ...PERSONAL_OS_SCREENSHOTS.home,
+            alt: 'The Personal OS Home workspace — greeting, today’s focus with progress, sticky notes, and quick access on a warm wood background',
+          },
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'THE PROBLEM',
+          lead: 'My digital life was scattered across apps — and none of them felt like mine.',
+          paragraphs: [
+            'Notes in one app, books in another, plans and reminders somewhere else. Every task meant opening a different tool, and every tool looked and felt like software — gray panels, busy menus, widgets competing for attention.',
+            'I wanted the opposite of that. A single place for everyday thinking and reading that I actually wanted to spend time in.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'THE IDEA',
+          lead: 'Not another dashboard — a digital home.',
+          paragraphs: [
+            'Personal OS is built as a warm personal workspace rather than a productivity app trying to do everything. The interface draws on wood, paper, and warm surfaces, and the Library and Reader are designed around an editorial reading experience.',
+            'Each workspace has one clear job: Home gathers the day, Notes captures thinking in whatever form fits, and Library keeps books, reading progress, and highlights on one shelf.',
+          ],
+        },
+        {
+          id: 'workspaces',
+          heading: 'THE WORKSPACES',
+          lead: 'Eight planned rooms. Three are built.',
+          paragraphs: [
+            'The plan covers eight workspaces: Home, Notes, Library, Finance, AI Workspace, Gallery, Planning, and Achievement. Today, three of them exist: Home, Notes, and Library with its Reader.',
+          ],
+          features: [
+            {
+              label: 'Home',
+              description:
+                'The starting point — today’s focus, sticky notes, and quick access to everyday tools.',
+            },
+            {
+              label: 'Notes',
+              description:
+                'Documents in multiple working modes, from rich text and Markdown to spreadsheet, canvas, presentation, mindmap, database, diagram, and media.',
+            },
+            {
+              label: 'Library & Reader',
+              description:
+                'A bookshelf for reading, with progress tracking, notes, highlights, and an editorial reading page.',
+            },
+          ],
+        },
+        {
+          id: 'inside-notes',
+          heading: 'INSIDE NOTES',
+          lead: 'One note system, nine working modes.',
+          paragraphs: [
+            'Notes is the technical centerpiece. A note is not limited to text — every document can open in one of nine working modes: rich text, Markdown, spreadsheet, canvas, presentation, mindmap, database, diagram, and media.',
+            'What has been verified in use so far: creating and editing notes with automatic saving and persistence, the spreadsheet editor, and the everyday mechanics around notes — notebooks, collections, favorites, pinning, search, and filtering.',
+          ],
+          features: [
+            {
+              label: 'Nine working modes',
+              description:
+                'Rich text, Markdown, spreadsheet, canvas, presentation, mindmap, database, diagram, and media — every document opens in the mode that fits it.',
+            },
+            {
+              label: 'Creation & persistence',
+              description:
+                'New notes are created through a dialog with mode, color, favorite, and pin options; documents are saved automatically and persisted locally.',
+            },
+            {
+              label: 'Spreadsheet editor',
+              description: 'A working spreadsheet mode inside the note system.',
+            },
+            {
+              label: 'Organization',
+              description:
+                'Notebooks, collections, favorites, pinning, search, and filtering keep notes findable as they grow.',
+            },
+          ],
+        },
+        {
+          id: 'interface',
+          heading: 'THE INTERFACE',
+          lead: 'Wood, paper, and room to think.',
+          paragraphs: [
+            'The visual language is deliberately un-dashboard-like: warm surfaces, paper-inspired panels, and an editorial reading experience. The Library shelf and the Reader’s page-turn and theme behavior are its clearest expression.',
+          ],
+          images: [
+            {
+              ...PERSONAL_OS_SCREENSHOTS.library,
+              alt: 'The Library workspace — a wooden bookshelf of sample books with reading progress and a detail panel',
+              caption: 'Library — 15 sample books on the shelf',
+            },
+            {
+              ...PERSONAL_OS_SCREENSHOTS.readerLight,
+              alt: 'The Reader workspace in light theme — an open two-page sample chapter with a notes and highlights panel',
+              caption: 'Reader — sample chapter, light theme',
+            },
+            {
+              ...PERSONAL_OS_SCREENSHOTS.readerDark,
+              alt: 'The Reader workspace in dark reading mode — the same sample chapter with the reading theme switched to dark',
+              caption: 'Reader — the same page in dark reading mode',
+            },
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'MY ROLE',
+          paragraphs: [
+            'Personal OS is my own project — I shaped the concept, designed the experience, and built the workspaces that exist today, with AI as my development assistant.',
+          ],
+          list: [
+            'Product thinking — the workspace concept, the eight-room structure, and the calm, home-like direction',
+            'UI/UX design — the wood-and-paper visual identity and the editorial Library and Reader experience',
+            'Frontend development — the Home, Notes, and Library workspaces, built with Next.js and TypeScript',
+            'AI-assisted development — using AI for exploration, implementation speed, and iteration, with product direction kept under my control',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'CURRENT STATUS',
+          tag: 'IN DEVELOPMENT',
+          paragraphs: [
+            'Personal OS is a work in progress, not a finished product. It has not been released to users, and there are no usage numbers or business outcomes to report.',
+          ],
+          list: [
+            'Three of eight planned workspaces are implemented: Home, Notes, and Library with its Reader',
+            'The Library holds 15 sample book records; the Reader content is a generic sample chapter',
+            'Notes data is persisted locally in the browser — there is no cloud sync yet',
+            'The remaining five workspaces — Finance, AI Workspace, Gallery, Planning, and Achievement — are still planned',
+          ],
+        },
+      ],
+      next: {
+        heading: "WHAT'S NEXT",
+        items: [
+          'Build the remaining workspaces — Finance, AI Workspace, Gallery, Planning, and Achievement',
+          'Deepen the reading experience and move the Library beyond sample data',
+          'Add cloud sync so notes and library data can follow the user across devices',
+          'Complete a full mobile responsive pass — the interface is currently designed around desktop screens',
+        ],
+      },
+    },
     kodingid: {
       hero: {
         eyebrow: 'CASE STUDY',

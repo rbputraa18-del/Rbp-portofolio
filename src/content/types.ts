@@ -16,6 +16,23 @@ export interface ProjectCopy {
 }
 
 /**
+ * One screenshot shown inside a case study. Real evidence only — never
+ * fabricated (PROJECT_BRIEF.md — Content Integrity). `src`, `width` and
+ * `height` are wired once in src/data/assets.ts; `alt` and `caption` are
+ * localized copy and live in the dictionaries.
+ */
+export interface CaseStudyImage {
+  src: string
+  /** Intrinsic dimensions — reserved for layout before the image loads. */
+  width: number
+  height: number
+  /** Meaningful alt text per language (DESIGN_SYSTEM.md — Imagery). */
+  alt: string
+  /** Optional short figure caption. */
+  caption?: string
+}
+
+/**
  * One case-study page (CONTENT.md — Case Study Template).
  * The page component only renders; all copy lives in the dictionaries so
  * every case study is bilingual and centrally editable.
@@ -26,8 +43,11 @@ export interface CaseStudyHero {
   positioning: string
   /** Verified technology only (CONTENT.md — Content Rules). */
   stack: string
-  /** Typographic diagram in place of screenshots — e.g. the product's learning path. */
-  visual: { caption: string; path: string[] }
+  /**
+   * Hero visual — a real screenshot when one exists; otherwise the
+   * typographic diagram (e.g. the product's learning path).
+   */
+  visual: { caption: string; path?: string[]; image?: CaseStudyImage }
 }
 
 export interface CaseStudySection {
@@ -46,6 +66,8 @@ export interface CaseStudySection {
   features?: { label: string; description: string }[]
   /** Optional labeled groups of items (e.g. project tiers). */
   groups?: { label: string; items: { text: string; note?: string }[] }[]
+  /** Optional screenshot evidence; the first image is rendered full-width. */
+  images?: CaseStudyImage[]
 }
 
 export interface CaseStudyCopy {

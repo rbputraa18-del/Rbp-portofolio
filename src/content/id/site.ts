@@ -1,3 +1,4 @@
+import { PERSONAL_OS_SCREENSHOTS } from '../../data/assets'
 import type { Dictionary } from '../types'
 
 /**
@@ -143,6 +144,158 @@ export const id = {
   // Konten studi kasus diverifikasi terhadap sumber KodingID
   // (E:\Tugas\XAMPP\htdocs\koding.id) — hanya yang benar-benar ada.
   caseStudies: {
+    'personal-os': {
+      hero: {
+        eyebrow: 'STUDI KASUS',
+        title: 'Personal OS',
+        positioning:
+          'Rumah digital pribadi yang hangat — ruang kerja yang dirancang untuk menyatukan berpikir, belajar, merencanakan, dan aktivitas sehari-hari dalam satu tempat yang tenang.',
+        stack: 'Next.js · React · TypeScript · Tailwind CSS · TipTap · Framer Motion',
+        visual: {
+          caption: 'Ruang kerja Home',
+          image: {
+            ...PERSONAL_OS_SCREENSHOTS.home,
+            alt: 'Ruang kerja Home Personal OS — sapaan, fokus hari ini dengan progres, catatan tempel, dan akses cepat di atas latar kayu yang hangat',
+          },
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'MASALAHNYA',
+          lead: 'Kehidupan digital saya tersebar di berbagai aplikasi — dan tidak ada yang terasa seperti milik saya.',
+          paragraphs: [
+            'Catatan di satu aplikasi, buku di aplikasi lain, rencana dan pengingat di tempat lain lagi. Setiap pekerjaan berarti membuka alat yang berbeda, dan setiap alat tampak dan terasa seperti perangkat lunak — panel abu-abu, menu yang ramai, widget yang berebut perhatian.',
+            'Saya menginginkan kebalikannya. Satu tempat untuk berpikir dan membaca sehari-hari yang benar-benar ingin saya huni.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'IDENYA',
+          lead: 'Bukan dashboard lagi — melainkan rumah digital.',
+          paragraphs: [
+            'Personal OS dibangun sebagai ruang kerja pribadi yang hangat, bukan aplikasi produktivitas yang mencoba melakukan segalanya. Antarmukanya mengambil nuansa kayu, kertas, dan permukaan hangat, sementara Library dan Reader dirancang sebagai pengalaman membaca yang editorial.',
+            'Setiap ruang kerja punya satu tugas yang jelas: Home mengumpulkan hari, Notes menangkap pikiran dalam bentuk apa pun yang sesuai, dan Library menyimpan buku, progres membaca, serta sorotan dalam satu rak.',
+          ],
+        },
+        {
+          id: 'workspaces',
+          heading: 'RUANG KERJA',
+          lead: 'Delapan ruang direncanakan. Tiga sudah dibangun.',
+          paragraphs: [
+            'Rencananya mencakup delapan ruang kerja: Home, Notes, Library, Finance, AI Workspace, Gallery, Planning, dan Achievement. Saat ini tiga di antaranya sudah ada: Home, Notes, serta Library beserta Reader-nya.',
+          ],
+          features: [
+            {
+              label: 'Home',
+              description:
+                'Titik awal — fokus hari ini, catatan tempel, dan akses cepat ke alat sehari-hari.',
+            },
+            {
+              label: 'Notes',
+              description:
+                'Dokumen dalam berbagai mode kerja, dari teks kaya dan Markdown hingga spreadsheet, canvas, presentation, mindmap, database, diagram, dan media.',
+            },
+            {
+              label: 'Library & Reader',
+              description:
+                'Rak buku untuk membaca, dengan pelacakan progres, catatan, sorotan, dan halaman baca yang editorial.',
+            },
+          ],
+        },
+        {
+          id: 'inside-notes',
+          heading: 'DI DALAM NOTES',
+          lead: 'Satu sistem catatan, sembilan mode kerja.',
+          paragraphs: [
+            'Notes adalah pusat teknisnya. Sebuah catatan tidak terbatas pada teks — setiap dokumen bisa dibuka dalam salah satu dari sembilan mode kerja: rich text, Markdown, spreadsheet, canvas, presentation, mindmap, database, diagram, dan media.',
+            'Yang sudah terverifikasi digunakan sejauh ini: membuat dan mengedit catatan dengan penyimpanan otomatis dan persistensi, editor spreadsheet, serta mekanisme sehari-hari di sekitar catatan — notebook, koleksi, favorit, pin, pencarian, dan penyaringan.',
+          ],
+          features: [
+            {
+              label: 'Sembilan mode kerja',
+              description:
+                'Rich text, Markdown, spreadsheet, canvas, presentation, mindmap, database, diagram, dan media — setiap dokumen dibuka dalam mode yang paling sesuai.',
+            },
+            {
+              label: 'Pembuatan & persistensi',
+              description:
+                'Catatan baru dibuat lewat dialog dengan pilihan mode, warna, favorit, dan pin; dokumen tersimpan otomatis dan tersimpan secara lokal.',
+            },
+            {
+              label: 'Editor spreadsheet',
+              description: 'Mode spreadsheet yang berfungsi di dalam sistem catatan.',
+            },
+            {
+              label: 'Pengelolaan',
+              description:
+                'Notebook, koleksi, favorit, pin, pencarian, dan penyaringan menjaga catatan tetap mudah ditemukan.',
+            },
+          ],
+        },
+        {
+          id: 'interface',
+          heading: 'ANTARMUKA',
+          lead: 'Kayu, kertas, dan ruang untuk berpikir.',
+          paragraphs: [
+            'Bahasa visualnya sengaja anti-dashboard: permukaan hangat, panel bergaya kertas, dan pengalaman membaca yang editorial. Rak buku Library serta perilaku balik halaman dan tema Reader adalah ekspresinya yang paling jelas.',
+          ],
+          images: [
+            {
+              ...PERSONAL_OS_SCREENSHOTS.library,
+              alt: 'Ruang kerja Library — rak buku kayu berisi buku contoh dengan progres membaca dan panel detail',
+              caption: 'Library — 15 buku contoh di rak',
+            },
+            {
+              ...PERSONAL_OS_SCREENSHOTS.readerLight,
+              alt: 'Ruang kerja Reader dalam tema terang — bab contoh dua halaman yang terbuka dengan panel catatan dan sorotan',
+              caption: 'Reader — bab contoh, tema terang',
+            },
+            {
+              ...PERSONAL_OS_SCREENSHOTS.readerDark,
+              alt: 'Ruang kerja Reader dalam mode membaca gelap — bab contoh yang sama dengan tema baca dialihkan ke gelap',
+              caption: 'Reader — halaman yang sama dalam mode membaca gelap',
+            },
+          ],
+        },
+        {
+          id: 'my-role',
+          heading: 'PERAN SAYA',
+          paragraphs: [
+            'Personal OS adalah proyek saya sendiri — saya merancang konsepnya, mendesain pengalamannya, dan membangun ruang kerja yang ada hari ini, dengan AI sebagai asisten pengembangan.',
+          ],
+          list: [
+            'Product thinking — konsep ruang kerja, struktur delapan ruang, dan arah yang tenang seperti rumah',
+            'Desain UI/UX — identitas visual kayu-dan-kertas serta pengalaman Library dan Reader yang editorial',
+            'Pengembangan frontend — ruang kerja Home, Notes, dan Library, dibangun dengan Next.js dan TypeScript',
+            'Pengembangan berbantuan AI — menggunakan AI untuk eksplorasi, kecepatan implementasi, dan iterasi, dengan arah produk tetap di bawah kendali saya',
+          ],
+        },
+        {
+          id: 'current-status',
+          heading: 'STATUS SAAT INI',
+          tag: 'DALAM PENGEMBANGAN',
+          paragraphs: [
+            'Personal OS adalah proyek yang sedang berjalan, bukan produk jadi. Belum dirilis ke pengguna, dan tidak ada angka penggunaan atau hasil bisnis yang bisa dilaporkan.',
+          ],
+          list: [
+            'Tiga dari delapan ruang kerja sudah diimplementasikan: Home, Notes, serta Library beserta Reader-nya',
+            'Library berisi 15 catatan buku contoh; konten Reader adalah bab contoh yang generik',
+            'Data Notes tersimpan lokal di browser — belum ada sinkronisasi cloud',
+            'Lima ruang kerja tersisa — Finance, AI Workspace, Gallery, Planning, dan Achievement — masih direncanakan',
+          ],
+        },
+      ],
+      next: {
+        heading: 'SELANJUTNYA',
+        items: [
+          'Membangun ruang kerja tersisa — Finance, AI Workspace, Gallery, Planning, dan Achievement',
+          'Memperdalam pengalaman membaca dan membawa Library melampaui data contoh',
+          'Menambahkan sinkronisasi cloud agar catatan dan data library bisa mengikuti pengguna antar perangkat',
+          'Menyelesaikan pass responsif mobile penuh — antarmuka saat ini dirancang di sekitar layar desktop',
+        ],
+      },
+    },
     kodingid: {
       hero: {
         eyebrow: 'STUDI KASUS',

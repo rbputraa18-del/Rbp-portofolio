@@ -126,6 +126,19 @@
   color: var(--color-text-secondary);
 }
 
+/* Hero visual — real screenshot variant (DESIGN_SYSTEM.md — Imagery:
+   consistent treatment with subtle borders/shadows). The compound
+   selector keeps this ahead of the base .case-study-hero-visual rules
+   (including the desktop padding) regardless of source order, and
+   `margin: 0` resets the UA figure margin. */
+.case-study-hero-visual.case-study-hero-visual--image {
+  margin: 0;
+  padding: 0;
+  gap: var(--space-4);
+  background-color: transparent;
+  border: none;
+}
+
 .case-study-path {
   display: flex;
   flex-direction: column;
@@ -384,6 +397,40 @@
   color: var(--color-text-secondary);
 }
 
+/* ---------- Section screenshots ---------- */
+
+.case-study-images {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.case-study-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.case-study-figure-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 32px 64px -40px rgb(0 0 0 / 0.7);
+  background-color: var(--color-surface);
+}
+
+.case-study-figure-caption {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
 /* ---------- Footer nav ---------- */
 
 .case-study-footer-nav {
@@ -435,6 +482,15 @@
   .case-study-groups {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-8);
+  }
+
+  /* Screenshot sets pair up; the first (feature) shot spans both columns. */
+  .case-study-images.has-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-study-images.has-pair .case-study-figure:first-child {
+    grid-column: 1 / -1;
   }
 }
 
