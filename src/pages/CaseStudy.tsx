@@ -219,6 +219,29 @@ function CaseStudySectionView({ section, index }: { section: CaseStudySection; i
             ))}
           </div>
         ) : null}
+        {section.prototype ? (
+          <div className="case-study-prototype">
+            <div className="case-study-prototype-bar">
+              <span className="case-study-prototype-caption">
+                {section.prototype.caption}
+              </span>
+              <a
+                className="case-study-prototype-open"
+                href={section.prototype.src}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {section.prototype.openLabel} ↗
+              </a>
+            </div>
+            <iframe
+              className="case-study-prototype-frame"
+              src={section.prototype.src}
+              title={section.prototype.caption}
+              loading="lazy"
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   )

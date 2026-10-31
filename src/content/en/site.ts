@@ -788,5 +788,73 @@ export const en = {
         ],
       },
     },
+    're17-control': {
+      hero: {
+        eyebrow: 'CASE STUDY',
+        title: 'RE17 Control',
+        positioning:
+          'A centralized operational workspace for store teams — daily monitoring, tasks, schedules, and sales/target visibility in one place.',
+        stack: 'HTML · CSS · JavaScript (interactive prototype)',
+        visual: {
+          caption: 'The operational workspace, from monitoring to knowledge',
+          path: ['Operasional', 'Checklist / Rundown', 'Stock Opname', 'Jadwal Pegawai', 'Pusat Pengetahuan'],
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'THE PROBLEM',
+          lead: 'Store information was everywhere — and nowhere useful.',
+          paragraphs: [
+            'Store information and instructions were scattered across different channels. Targets, priorities, and daily work were harder to monitor, and organizing the day meant checking several places at once.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'THE IDEA',
+          lead: 'One operational workspace for the whole store day.',
+          paragraphs: [
+            'RE17 Control brings the store’s daily operations together in one place: monitoring, daily tasks, schedules, sales and target visibility, stock-opname support, learning, and other store activities.',
+            'This case study is a selective showcase — the project is presented without exposing confidential store information.',
+          ],
+        },
+        {
+          id: 'prototype',
+          heading: 'THE PROTOTYPE',
+          lead: 'Explore the interactive prototype below.',
+          paragraphs: [
+            'The prototype is the operational workspace itself: the operations dashboard, checklist and rundown, stock opname, staff schedules, store layout, and the knowledge and training centers. All store names and figures shown are demo content.',
+          ],
+          prototype: {
+            // Relative path — resolves correctly under any deploy base
+            // (Vite preview at /, or a GitHub Pages subpath like /Rbp-portofolio/).
+            src: 'demos/re17/index.html',
+            caption: 'RE17 v2 — Operational Workspace · interactive prototype',
+            openLabel: 'Open in new tab',
+          },
+        },
+        {
+          id: 'current-status',
+          heading: 'CURRENT STATUS',
+          tag: 'IN DEVELOPMENT',
+          paragraphs: [
+            'RE17 Control is an internal operational workspace prototype in active development — not a finished product, and not yet in use by real stores.',
+          ],
+          list: [
+            'The prototype is an interactive HTML build covering the operational dashboard and its modules',
+            'All store names and data shown are demo content — no confidential store information is exposed',
+            'The workspace continues to be shaped and extended',
+          ],
+        },
+      ],
+      next: {
+        heading: "WHAT'S NEXT",
+        items: [
+          'Continue shaping the workspace modules with the store team',
+          'Refine the daily operational flows — checklist, schedule, and stock opname',
+          'Extend the knowledge and training centers',
+        ],
+      },
+    },
   },
 } satisfies Dictionary

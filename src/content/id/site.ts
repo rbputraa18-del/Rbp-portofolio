@@ -788,5 +788,73 @@ export const id = {
         ],
       },
     },
+    're17-control': {
+      hero: {
+        eyebrow: 'STUDI KASUS',
+        title: 'RE17 Control',
+        positioning:
+          'Ruang kerja operasional terpusat untuk tim toko — pemantauan harian, tugas, jadwal, dan visibilitas penjualan/target dalam satu tempat.',
+        stack: 'HTML · CSS · JavaScript (prototipe interaktif)',
+        visual: {
+          caption: 'Ruang kerja operasional, dari pemantauan hingga pengetahuan',
+          path: ['Operasional', 'Checklist / Rundown', 'Stock Opname', 'Jadwal Pegawai', 'Pusat Pengetahuan'],
+        },
+      },
+      sections: [
+        {
+          id: 'problem',
+          heading: 'MASALAHNYA',
+          lead: 'Informasi toko tersebar di mana-mana — dan tidak terpakai dengan baik.',
+          paragraphs: [
+            'Informasi dan instruksi toko tersebar di berbagai kanal. Target, prioritas, dan pekerjaan harian menjadi lebih sulit dipantau, dan mengatur hari berarti mengecek beberapa tempat sekaligus.',
+          ],
+        },
+        {
+          id: 'idea',
+          heading: 'IDENYA',
+          lead: 'Satu ruang kerja operasional untuk seluruh hari kerja toko.',
+          paragraphs: [
+            'RE17 Control menyatukan operasional harian toko dalam satu tempat: pemantauan, tugas harian, jadwal, visibilitas penjualan/target, dukungan stock-opname, pembelajaran, dan aktivitas toko lainnya.',
+            'Studi kasus ini adalah showcase selektif — proyek ditampilkan tanpa mengekspos informasi toko yang bersifat rahasia.',
+          ],
+        },
+        {
+          id: 'prototype',
+          heading: 'PROTOTIPENYA',
+          lead: 'Jelajahi prototipe interaktif di bawah ini.',
+          paragraphs: [
+            'Prototipe ini adalah ruang kerja operasionalnya itu sendiri: dashboard operasional, checklist dan rundown, stock opname, jadwal pegawai, denah toko, serta pusat pengetahuan dan training. Semua nama toko dan angka yang ditampilkan adalah konten demo.',
+          ],
+          prototype: {
+            // Path relatif — berlaku benar di base deploy mana pun
+            // (preview Vite di /, atau subpath GitHub Pages seperti /Rbp-portofolio/).
+            src: 'demos/re17/index.html',
+            caption: 'RE17 v2 — Operational Workspace · prototipe interaktif',
+            openLabel: 'Buka di tab baru',
+          },
+        },
+        {
+          id: 'current-status',
+          heading: 'STATUS SAAT INI',
+          tag: 'DALAM PENGEMBANGAN',
+          paragraphs: [
+            'RE17 Control adalah prototipe ruang kerja operasional internal yang masih aktif dikembangkan — bukan produk jadi, dan belum digunakan oleh toko sebenarnya.',
+          ],
+          list: [
+            'Prototipe berupa build HTML interaktif yang mencakup dashboard operasional dan modul-modulnya',
+            'Semua nama toko dan data yang ditampilkan adalah konten demo — tidak ada informasi toko rahasia yang diekspos',
+            'Ruang kerja ini terus dibentuk dan diperluas',
+          ],
+        },
+      ],
+      next: {
+        heading: 'SELANJUTNYA',
+        items: [
+          'Terus membentuk modul-modul ruang kerja bersama tim toko',
+          'Menyempurnakan alur operasional harian — checklist, jadwal, dan stock opname',
+          'Memperluas pusat pengetahuan dan training',
+        ],
+      },
+    },
   },
 } satisfies Dictionary

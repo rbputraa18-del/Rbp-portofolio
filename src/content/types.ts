@@ -68,6 +68,8 @@ export interface CaseStudySection {
   groups?: { label: string; items: { text: string; note?: string }[] }[]
   /** Optional screenshot evidence; the first image is rendered full-width. */
   images?: CaseStudyImage[]
+  /** Optional live prototype — rendered as a responsive iframe with an open-in-new-tab link. */
+  prototype?: { src: string; caption: string; openLabel: string }
 }
 
 export interface CaseStudyCopy {

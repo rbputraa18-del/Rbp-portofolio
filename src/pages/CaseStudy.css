@@ -431,6 +431,58 @@
   color: var(--color-text-secondary);
 }
 
+/* ---------- Live prototype embed — responsive iframe + open-in-new-tab ---------- */
+
+.case-study-prototype {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  min-width: 0;
+}
+
+.case-study-prototype-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.case-study-prototype-caption {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.case-study-prototype-open {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.case-study-prototype-open:hover {
+  color: var(--color-accent-hover);
+}
+
+/* The frame matches the screenshot treatment and keeps a comfortable,
+   scrollable height on both desktop and phone. */
+.case-study-prototype-frame {
+  display: block;
+  width: 100%;
+  height: clamp(480px, 72vh, 820px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 32px 64px -40px rgb(0 0 0 / 0.7);
+  background-color: var(--color-surface);
+}
+
 /* ---------- Footer nav ---------- */
 
 .case-study-footer-nav {
