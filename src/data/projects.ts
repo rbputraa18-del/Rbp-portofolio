@@ -6,6 +6,7 @@ import {
   KODINGID_SCREENSHOTS,
   MAW_INVENTORY_SCREENSHOTS,
   PERSONAL_OS_SCREENSHOTS,
+  RE17_SCREENSHOTS,
   WEB_UMKM_SCREENSHOTS,
 } from './assets'
 
@@ -46,8 +47,10 @@ export interface ProjectMeta {
 
 /*
  * Previews are genuine case-study screenshots (PROJECT_BRIEF.md — Content
- * Integrity: real evidence only). RE17 keeps a null preview for now — it is
- * a selective-visibility project and its visuals stay pending owner approval.
+ * Integrity: real evidence only). RE17's preview is the owner-approved
+ * operations-dashboard capture from the RE17 V2 prototype materials;
+ * the project itself stays selective-visibility (no confidential store
+ * information is exposed).
  *
  * Convention for assets:
  *   src/assets/images/projects/<id>/…
@@ -62,7 +65,16 @@ export const PROJECTS = [
     status: 'in-development',
     visibility: 'selective',
     caseStudyRoute: '/work/re17-control',
-    images: { preview: null, screenshots: [] },
+    images: {
+      preview: {
+        src: RE17_SCREENSHOTS.dashboard.src,
+        alt: {
+          en: 'RE17 Control — the operations dashboard with daily store monitoring and sales visibility',
+          id: 'RE17 Control — dashboard operasional dengan pemantauan harian toko dan visibilitas penjualan',
+        },
+      },
+      screenshots: [],
+    },
   },
   {
     id: 'personal-os',

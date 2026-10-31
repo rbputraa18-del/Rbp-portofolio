@@ -21,6 +21,7 @@ import umkmMbokAni from '../assets/images/projects/web-umkm/dapur-mbok-ani-deskt
 import umkmKala from '../assets/images/projects/web-umkm/kala-coffee-desktop-1440x900.webp'
 import umkmUndanganSage from '../assets/images/projects/web-umkm/undangan-sage-mobile-390x844.webp'
 import umkmUndanganGold from '../assets/images/projects/web-umkm/undangan-gold-mobile-390x844.webp'
+import re17Dashboard from '../assets/images/projects/re17-control/operations-dashboard-desktop-1440x900.jpg'
 
 /**
  * Static asset wiring.
@@ -88,4 +89,15 @@ export const WEB_UMKM_SCREENSHOTS = {
   kala: { src: umkmKala, width: 1440, height: 900 },
   undanganSage: { src: umkmUndanganSage, width: 390, height: 844 },
   undanganGold: { src: umkmUndanganGold, width: 390, height: 844 },
+} as const
+
+/**
+ * RE17 Control preview — the owner-approved operations-dashboard capture
+ * from the RE17 V2 prototype materials, cropped to the site's 16:10
+ * preview convention (source: 1213x1296 full-page capture, top band).
+ * RE17 remains a selective-visibility project; the capture shows the
+ * dashboard layout only.
+ */
+export const RE17_SCREENSHOTS = {
+  dashboard: { src: re17Dashboard, width: 1440, height: 900 },
 } as const
